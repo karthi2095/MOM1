@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Minutes of Meeting</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" href="css/all.css">
+
+	<script type="text/javascript">
+	function calladd(a)
+	{
+		document.getElementById('action'+a).style.display='block';
+	}
+	
+	function callclose(a)
+	{
+		document.getElementById('action'+a).style.display='none';
+	}
+	</script>
+	<style>
+	.grid-table td input, .grid-table td select{padding:2px 0px;}
+	</style>
+</head>
+<!--Design Prepared by Rajasri Systems-->   
+<body>
+
+<div id="wrapper">
+	<div id="header">
+		<a href="index.html" class="inner-logo"><img src="img/logo.png" alt=""/></a>
+	<ul id="top-navigation">
+			
+			<li><a href="controlPanel.html" class="navigation_link">Homepage</a></li>
+			<li><a href="department.html" class="navigation_link">Department</a></li>
+			<li><a href="users.html" class="navigation_link">Users</a></li>
+			<li class="active"><a href="meetings.html" class="navigation_link">Meetings</a></li>
+		</ul>
+		
+		
+	</div>
+<div style="clear:both;"></div>
+<div id="middle"> 
+  <div id="center-column">
+    <div class="top-bar-header">
+      <h1>Mintues of Meeting</h1>
+      <div class="breadcrumbs">Homepage >> Mintues of Meeting >> Add Meeting</div>
+    </div>
+    <br />
+    <div class="manage-grid">
+		<table border="0" cellpadding="2" cellspacing="0" class="grid-table" style="width: 70%; margin-left: 190px;">
+			<tr>
+				<td width="30%" style="padding: 15px;">Meeting Name:</td>
+				<td><input type="text" name="meetingname" id="meetingname" value="" size="30"></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px;">Meeting Date:</td>
+				<td><input type="text" name="meetingname" id="meetingname" value="" size="30"><img src="img/date.png" width="25" height="17" alt=""/></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px;">Program Name:</td>
+				<td><input type="text" name="meetingname" id="meetingname" value="" size="30"></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px;">Project Name:</td>
+				<td><input type="text" name="meetingname" id="meetingname" value="" size="30"></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px;">Meeting Owner:</td>
+				<td>
+				
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 40%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 15px;" valign="top">Information Provided Description:</td>
+				<td style="padding-top: 10px; padding-bottom: 10px;">
+				<textarea rows="6" cols="70"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 15px;" valign="top">Action Item:
+				<div  style="padding: 15px; margin-top: 40px; padding-left: 0px;" valign="top">Dependent Task:</td>
+				<td style="padding-top: 10px; padding-bottom: 10px;">
+				<div id="action1">
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 40%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+					<select name="choose" style="width:32%;/*! line-height: 20px; */padding: 2px 0px;">
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+					<span style="margin-left: 26px;width: 63%;margin-top: 0px;display: inline-block;">
+					Action Due Date:<input name="meetingname" id="meetingname" value="" size="30" type="text"><img src="img/date.png" alt="" height="17" width="25">
+					<a href="javascript: calladd('2');" style="margin-top: 10px;display: inline-block;"><img src="img/plus.png" height="17" width="17"></a>
+					</span>
+				</div>
+				
+				
+							
+				<div id="action2" style="display:none;margin-bottom:10px; margin-top:10px;">
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 42%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+					<select name="choose" style="width: 32%;">
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+					<span style="margin-left: 15px;width: 63%;margin-top: 10px;display: inline-block;">
+					Action Due Date:<input name="meetingname" id="meetingname" value="" size="30" type="text"><img src="img/date.png" alt="" height="17" width="25">
+					<a href="javascript: calladd('3');"><img src="img/plus.png" height="17" width="17"></a>
+					<a href="javascript: callclose('2');"><img src="img/cross.png" height="17" width="17"></a>
+					</span>
+					</span>
+				</div>
+				
+				<div id="action3" style="display:none;margin-bottom:10px;">
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 42%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+					<select name="choose" style="width: 32%;">
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+					<span style="margin-left: 15px;width: 63%;margin-top: 10px;display: inline-block;">
+					Action Due Date:<input name="meetingname" id="meetingname" value="" size="30" type="text"><img src="img/date.png" alt="" height="17" width="25">
+					<a href="javascript: calladd('4');"><img src="img/plus.png" height="17" width="17"></a>
+					<a href="javascript: callclose('3');"><img src="img/cross.png" height="17" width="17"></a>
+					</span>
+				</div>
+				<div id="action4" style="display: none; margin-bottom:10px;">
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 42%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+					<select name="choose" style="width: 32%;">
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+					<span style="margin-left: 15px;width: 63%;margin-top: 10px;display: inline-block;">
+					Action Due Date:<input name="meetingname" id="meetingname" value="" size="30" type="text"><img src="img/date.png" alt="" height="17" width="25">
+					<a href="javascript: calladd('5');"><img src="img/plus.png" height="17" width="17"></a>
+					<a href="javascript: callclose('4');"><img src="img/cross.png" height="17" width="17"></a>
+					</span>
+					
+				</div>
+				<div id="action5" style="display:none;margin-bottom:10px;">
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<textarea rows="2" cols="70"></textarea>
+					<br><br>
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 42%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+					<select name="choose" style="width: 32%;">
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+					<span style="margin-left: 15px;width: 63%;margin-top: 10px;display: inline-block;">
+					Action Due Date:<input name="meetingname" id="meetingname" value="" size="30" type="text"><img src="img/date.png" alt="" height="17" width="25">
+					<a href="javascript: callclose('5');"><img src="img/cross.png" height="17" width="17"></a>
+					</span>
+				</div>
+				</td>
+			</tr>
+			<!-- <tr> -->
+				<!-- <td style="padding: 15px;">Action Due Date:</td> -->
+				<!-- <td><input type="text" name="meetingname" id="meetingname" value="" size="30"><img src="img/date.png" width="25" height="17" alt=""/></td> -->
+			<!-- </tr> -->
+		<!-- <tr>
+				<td style="padding: 15px;">Action - Responsible Person &:</td>
+				<td>
+					<select name="choose" style="width: 32%;">
+						<option>--Select--</option>
+						<option>Production</option>
+						<option>Sales</option>
+						<option>Finance</option>
+						<option>R&D</option>
+						<option>Admin</option>
+					</select>
+					
+					<select name="choose" style="width: 40%;margin-right: 36px;float: right;">
+						<option>--Select User--</option>
+						<option>David - 56325</option>
+						<option>Suguna - 99965</option>
+						<option>Harikrishnan - 56965</option>
+						<option>Karthick - 53325</option>
+						<option>Gautham Krishna - 99925</option>
+						<option>Deva - 96325</option>
+						<option>Christina - 56455</option>
+						<option>Mercy - 45455</option>
+						<option>Antony - 57575</option>
+						<option>Sidharth - 56575</option>
+					</select>
+				</td>
+			</tr>-->
+			<tr>
+				<td style="padding: 15px;">Action - Status:</td>
+				<td>
+					<select name="choose" style="width: 210px">
+						<option>Completed</option>
+						<option>Postpone</option>
+						<option>On Hold</option>
+						<option>Re Scheduled</option>
+						<option>Cancelled</option>
+						<option>Follow Up</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="bg">
+				<td align="right" style="padding: 10px; text-align: center;" colspan="2">
+				<a href="meetings.html" style="text-decoration: none;"><input type="button" class="btn-submit" value="Submit" name="submit" /></a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="meetings.html" style="text-decoration: none;"><input type="button" class="btn-submit" value="Cancel" name="submit" /></a></td>
+			</tr>
+						
+		</table>
+	</div>
+ </div>
+</div>
+</div>	
+	
+
+</body>
+</html>
