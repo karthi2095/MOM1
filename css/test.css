@@ -1,0 +1,107 @@
+@CHARSET "ISO-8859-1";
+.page-header{background:#EAEAEA;color:#333;position:relative;text-transform:uppercase;overflow:hidden;width:100%;margin:0
+auto;font-size:17px}@media screen and (min-width: 1025px){.page-header{max-width:985px}}@media handheld, only screen and (max-width: 1024px){.mobile-view .page-header,.tablet-view .page-header,.nfl-responsive .page-header{font-size:1.7rem}}.page-header .page-header-content{font-weight:normal;font-style:normal;font-size:100%;line-height:2.941;font-family:NFLEndzoneTechBold,sans-serif;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;height:2.941em;white-space:nowrap;overflow:hidden;color:#999;border-bottom:0.118em solid #999;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.page-header .page-header-content>a{text-decoration:none}.page-header .page-header-titletext{padding:0
+0.706em;color:#333}.page-header .page-header-desktopsponsor,.page-header .page-header-desktopsponsorship{position:absolute;top:0;left:0;width:100%;height:100%}@media handheld, only screen and (max-width: 1024px){.mobile-view .page-header .page-header-desktopsponsor,.tablet-view .page-header .page-header-desktopsponsor,.nfl-responsive .page-header .page-header-desktopsponsor,.mobile-view .page-header .page-header-desktopsponsorship,.tablet-view .page-header .page-header-desktopsponsorship,.nfl-responsive .page-header .page-header-desktopsponsorship{display:none}}.page-header .page-header-desktopsponsor img,.page-header .page-header-desktopsponsorship
+img{vertical-align:top}.page-header .page-header-desktopsponsorship>a{position:absolute;top:0;right:0;width:26.471em;height:2.941em;background:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)}.page-header .page-header-mobilesponsorship{display:none;margin:0
+auto;width:320px;height:30px}.page-header .page-header-mobilesponsorship
+img{vertical-align:top;width:100%;height:100%}@media handheld, only screen and (max-width: 767px){.page-header .page-header-mobilesponsorship{display:block}}.page-header .page-header-tabletsponsorship{display:none;margin:0
+auto;width:400px;height:50px;position:absolute;top:0;right:0}@media screen and (min-width: 1025px){.page-header .page-header-tabletsponsorship{display:none}}@media handheld, only screen and (max-width: 767px){.page-header .page-header-tabletsponsorship{display:none}}.page-header .page-header-tabletsponsorship
+img{vertical-align:top;width:100%;height:100%}@media only screen and (min-width: 768px) and (max-width: 1024px){.page-header .page-header-tabletsponsorship{display:block}}#main-content
+h3{font:24px/1.28 NFLEndzoneSansCondMedium,sans-serif;text-transform:uppercase;color:#363636}.yui3-playoff-picture-modal{padding:5px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;background:#a3a3a3;background-image:linear-gradient(bottom, #969696 0%,#b9b9b9 35%,#969696 70%);background-image:-o-linear-gradient(bottom, #969696 0%, #b9b9b9 35%, #969696 70%);background-image:-moz-linear-gradient(bottom, #969696 0%, #b9b9b9 35%, #969696 70%);background-image:-webkit-linear-gradient(bottom, #969696 0%, #b9b9b9 35%, #969696 70%);background-image:-ms-linear-gradient(bottom, #969696 0%, #b9b9b9 35%, #969696 70%);background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #969696), color-stop(0.35, #b9b9b9), color-stop(0.7, #969696));-moz-box-shadow:0 0 35px 10px rgba(0,0,0,0.7);-webkit-box-shadow:0 0 35px 10px rgba(0,0,0,0.7);box-shadow:0 0 35px 10px rgba(0,0,0,0.7)}.modal-window{background:white;width:401px;padding:11px
+10px;background-image:linear-gradient(bottom, #c8c8c8 25%,#fff 63%);background-image:-o-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-moz-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-webkit-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-ms-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0.25, #c8c8c8), color-stop(0.63, #fff))}.modal-window
+h3{font:18px/25px NFLEndzoneTechBold,sans-serif;color:#013369;text-transform:uppercase;text-align:center;text-shadow:0px 1px 1px white}.modal-window .other-teams{margin-top:10px}.modal-window .other-teams .ot-matchup{height:27px;border:1px
+solid grey;padding:4px;float:left;margin-right:5px;background-image:linear-gradient(bottom, #c8c8c8 25%,#fff 63%);background-image:-o-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-moz-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-webkit-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-ms-linear-gradient(bottom, #c8c8c8 25%, #fff 63%);background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0.25, #c8c8c8), color-stop(0.63, #fff))}.modal-window .other-teams
+a{float:left;display:block;margin-left:5px;border:1px
+solid white}.modal-window .other-teams
+a.first{margin-left:0}.modal-window
+.heading{margin:15px
+0;padding:5px
+0;border-bottom:1px dotted grey}.modal-window .team-name{font:24px/26px NFLEndzoneSansCondMedium,sans-serif;color:#013369}.modal-window
+.conference{font:18px/25px NFLEndzoneTechBold,sans-serif;color:#323232;float:right}.modal-window .team-info{width:310px;margin:0
+auto}.modal-window
+strong{font-weight:bold}.modal-window .team-info
+p{font:12px/16px Arial, sans-serif;margin-bottom:10px;color:#323232}.modal-window
+.close{width:19px;height:19px;position:absolute;top:15px;right:15px;text-indent:1000px;overflow:hidden;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/modal-sprite.png) no-repeat 0 0}.modal-window .modal-next{width:18px;height:28px;position:absolute;right:15px;top:50%;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/modal-sprite.png) no-repeat 0 -58px;text-indent:1000px;overflow:hidden}.modal-window .modal-next:hover{background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/modal-sprite.png) no-repeat 0 -30px}.modal-window .modal-back{width:18px;height:28px;position:absolute;left:15px;top:50%;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/modal-sprite.png) no-repeat 0 -114px;text-indent:1000px;overflow:hidden}.modal-window .modal-back:hover{background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/modal-sprite.png) no-repeat 0 -86px}.playoff-picture.REG .team-name
+span{display:none}.grid.REG .team-name
+span{display:none}.playoff-header{z-index:50;position:relative}.conference{z-index:40}.divisional{z-index:30}.wildcard{z-index:20}.playoff-picture{min-height:210px}.playoff-header{height:210px;width:985px;border-bottom:1px solid #323232}.berth{border-top:3px solid #646464;border-bottom:1px solid #323232;position:relative}.berth
+.heading{height:25px;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/berth-bg.png) 0 -25px}.berth.conference
+.heading{background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/berth-bg.png) 0 0}.berth
+.body{overflow:hidden;height:25px;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/berth-bg.png) 0 -194px}.berth
+.footer{height:7px;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/berth-bg.png) 0 -219px}#main-content .berth
+h3{font:18px/23px NFLEndzoneTechBold,sans-serif;color:#013369;text-transform:uppercase;text-align:center;text-shadow:0px 1px 1px white}.berth
+.date{font:14px/25px NFLEndzoneTechBold,sans-serif;position:absolute;top:0;left:630px;height:25px;color:#323232}.berth.conference
+.date{left:700px}.berth.conference
+.body{position:relative}.berth .afc-title,.berth .nfc-title{font:18px/18px NFLEndzoneTechBold,sans-serif;color:#e1e1e1;padding:0
+10px;margin-top:4px}.berth .afc-title{float:left}.berth .nfc-title{float:right}.berth .body .afc,.berth .body
+.nfc{width:453px;height:104px}.berth .body
+.afc{float:left;margin:9px
+0 0 11px;visibility:hidden}.berth .body
+.nfc{float:right;margin:9px
+11px 0 0;visibility:hidden}.berth .body .team-container-l{float:left;width:216px;height:104px;margin-top:10px}.berth .body .team-container-r{float:right;width:216px;height:104px;margin-top:10px}.POST .berth .body .team-container-l,.POST .berth .body .team-container-r{margin-top:0}.berth .body .team,.in-the-hunt li .team,.playoff-header
+.team{width:206px;height:42px;padding:5px}.berth .team img,.in-the-hunt li .team
+img{float:left;padding:0
+8px 0 0}.berth .team p,.in-the-hunt li .team
+p{width:136px;float:left}.berth p strong,.in-the-hunt p strong,.team
+strong{font-weight:bold}.berth .team p.team-name,.berth .team p.team-name .name,.in-the-hunt li .team p.team-name,.playoff-header .team .team-name{font:24px/26px NFLEndzoneSansCondMedium,sans-serif;color:#013369}.berth .team p.team-name
+.name{float:left}.berth .team p.team-name span,.in-the-hunt li .team p.team-name
+span{float:right;color:#323232;margin-right:15px}.team
+span.legend{font-size:18px !important;color:#323232 !important;float:none !important;display:inline-block !important}.berth .team p.team-standings,.in-the-hunt li .team p.team-standings,.record{font:12px/12px Arial,sans-serif;color:#323232}.in-the-hunt{width:641px;margin:5px
+0 20px 0}.in-the-hunt
+ul{width:300px}.in-the-hunt
+h3{float:left}a.tiebreaking-link{float:right;font:14px/26px Arial,sans-serif !important;font-weight:bold !important}.afc-in-the-hunt{float:left}.nfc-in-the-hunt{float:right}.in-the-hunt
+.header{height:10px;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/in-the-hunt-bg.png) 0 0}.in-the-hunt
+.wrapper{min-height:135px;border:1px
+solid #afafaf;border-top:none;border-bottom:none;padding:10px;background:#fdfdfd url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/in-the-hunt-body-bg.png) repeat-x center bottom}.in-the-hunt
+.footer{height:10px;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/in-the-hunt-bg.png) 0 -10px}.in-the-hunt
+.team{margin:0
+0 10px 42px;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/team-hover-bg.png) no-repeat 0 -52px}.in-the-hunt ul
+.heading{background:grey;padding:3px
+5px;font:18px/21px NFLEndzoneTechBold,sans-serif;border:none;margin:0
+0 10px 0;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/stripe-bg.png);color:#e1e1e1}.nfc-in-the-hunt
+.heading{text-align:right}.conference .team.l,.playoff-header
+.team.l{float:left;margin-left:30px}.conference .team.r,.playoff-header
+.team.r{float:right;margin-right:30px}.conference .team,.playoff-header
+.team{text-align:center;position:relative}.conference .team img,.playoff-header .team
+img{float:none;margin:0
+auto 2px auto;padding:0
+!important}.conference .team p,.playoff-header .team
+p{width:100%}.conference .team-score-l,.playoff-header .team-score-l{font:40px/40px NFLEndzoneSansCondBold,sans-serif;color:#323232;position:absolute;width:auto !important;right:10px;top:30px}.conference .team-score-r,.playoff-header .team-score-r{font:40px/40px NFLEndzoneSansCondBold,sans-serif;color:#323232;position:absolute;width:auto !important;left:10px;top:30px}.team:hover{background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/team-hover-bg.png) no-repeat 0 0;cursor:pointer}.conference .team:hover,.playoff-header .team:hover{background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/team-hover-bg-big.png) no-repeat 0 0;cursor:pointer}.conference .team,.playoff-header
+.team{height:127px !important;padding:5px
+0 0 0 !important;width:112px !important}.berth .body .team-blank,.in-the-hunt li .team-blank{width:206px;height:42px;padding:5px}.berth .team-blank img,.in-the-hunt li .team-blank
+img{float:left;padding:0
+8px 0 0}.berth .team-blank p,.in-the-hunt li .team-blank
+p{width:136px;float:left;font:16px/1.28 NFLEndzoneSansCondMedium, sans-serif;color:#323232}.berth .team-blank p.team-name,.in-the-hunt li .team-blank p.team-name{font:24px/26px NFLEndzoneSansCondMedium,sans-serif;color:#013369}.berth .team-blank p.team-name span,.in-the-hunt li .team-blank p.team-name
+span{float:right;color:#323232}.berth .team-blank p.team-standings,.in-the-hunt li .team-blank p.team-standings{font:12px/12px Arial,sans-serif;color:#323232}.conference .team-blank.l{float:left}.conference .team-blank.r{float:right}.conference .team-blank{text-align:center;position:relative}.conference .team-blank
+img{float:none;margin:auto}.conference .team-blank
+p{width:100%}.conference .team-blank-score-l{font:40px/40px NFLEndzoneSansCondBold,sans-serif;color:#323232;position:absolute;width:auto !important;right:10px;top:30px}.conference .team-blank-score-r{font:40px/40px NFLEndzoneSansCondBold,sans-serif;color:#323232;position:absolute;width:auto !important;left:10px;top:30px}.afc-standings,.nfc-standings{width:310px}.afc-standings table,.nfc-standings
+table{width:310px;color:#4b4b4b;margin-bottom:10px}.standings table
+thead{background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/table-bg.png) repeat-x;font-weight:bold}.afc-standings table td,.nfc-standings table
+td{text-align:center;height:20px}.standings tbody tr:hover{cursor:pointer}.standings tbody tr
+.title{font-weight:bold;color:#013369}.standings
+tr.odd{background:#f0f0f0}.afc-standings table .title,.nfc-standings table
+.title{text-align:left;width:130px;padding:0
+0 0 5px}.standings table .win,.standings table .lose,.standings table
+.tie{width:27px}.standings table
+.div{width:48px}.standings table
+.conf{width:49px}.afc-standings{float:left}.nfc-standings{float:right}.standings
+.heading{background:#333;padding:3px
+5px;font:18px/21px NFLEndzoneTechBold,sans-serif;border:none;margin:0
+0 10px 0;background:url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/stripe-bg.png);color:#e1e1e1}.standings .nfc-standings
+.heading{text-align:left}.article-area{margin-bottom:20px}.weekly-updates{padding:10px;background:#fdfdfd url(http://i.nflcdn.com/static/site/7.4/img/standings/playoff-picture/in-the-hunt-body-bg.png) repeat-x center bottom}.weekly-updates
+.article{width:265px;border-right:1px solid #bdbdbd;font:12px/1.28 Arial,sans-serif;color:#333;float:left}.weekly-updates
+.updated{font-weight:bold;font-style:italic;margin-top:20px}.weekly-updates .video-thumbs{float:right}.weekly-updates .video-thumbs
+.item{float:left;width:160px;margin-right:10px}.video-thumbs .item a.thumb-link{display:block;width:160px;height:100px;overflow:hidden;position:relative}.video-thumbs .item
+a{font:18px/1.28 NFLEndzoneSansCondMedium,sans-serif;color:#013369}.video-thumbs .item
+.thumb{width:160px}.video-thumbs .item
+.overlay{position:absolute;left:5px;bottom:5px}.weekly-updates .more-videos{float:right;font:14px/1.28 Arial,sans-serif;font-weight:bold}.social{position:absolute;right:10px;top:65px;z-index:51}.yui3-sharebar .skin-default.share-bar{background:transparent !important;border:none !important}.legend-wrapper{clear:both;background:#f0f0f0;padding:14px}.standings-legend
+.even{float:left;width:50%;font:12px/20px Arial,sans-serif}.standings-legend
+.odd{float:right;width:50%;font:12px/20px Arial,sans-serif}.not-clickable:hover{cursor:default}.article-decorator{margin-bottom:0px !important}#comment-form{margin-top:20px}.POST .in-the-hunt{display:none}.matchup-link{position:absolute;left:5px;bottom:-23px;font:normal normal 12px/12px NFLEndzoneTechBold,sans-serif;color:#323232 !important;display:none}.conference .matchup-link{position:absolute;left:165px;bottom:-20px;font:normal normal 12px/12px NFLEndzoneTechBold,sans-serif;color:#323232}.matchup-link
+.triangle{height:0;border-left:5px solid white;border-top:4px solid transparent;border-bottom:4px solid transparent;border-right:none;display:inline-block}.playoff-header
+.team.l{position:absolute;top:65px;left:115px}.playoff-header
+.team.r{position:absolute;top:65px;right:115px}.POST .other-teams{display:none}.team-score-l{margin-right:-50px;margin-top:-10px}.team-score-r{margin-left:-50px;margin-top:-10px}.conference .afc,.conference .nfc,.team-container-l,.team-container-r{position:relative}.afc .vs-icon{position:absolute;top:30px;left:214px}.nfc .vs-icon{position:absolute;top:30px;left:210px}.playoff-header .matchup-link{position:absolute;width:301px;height:195px;z-index:100;left:345px;top:8px;display:block;text-indent:10000px;overflow:hidden}.article-area
+h3{margin-left:-10px}.article-area
+p{padding:0
+10px}.POST
+span.legend{display:none !important}.standings{clear:both}.fb-comments{margin-top:20px;display:block}.playoff-header .team .team-name,.playoff-header .team .team-standings,.playoff-header .team .team-standings
+.record{color:white;text-shadow:2px 1px 1px black}.playoff-header .team:hover .team-name{color:#013369;text-shadow:0px 0px 0px black}.playoff-header .team:hover .team-standings,.playoff-header .team:hover .team-standings
+.record{color:black;text-shadow:0px 0px 0px black}
