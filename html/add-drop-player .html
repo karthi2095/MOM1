@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>:- Fantasy Football :-</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  
+  <body>
+  <div class="header">
+  <div class="container">
+	<div class="text-center">
+	<div class="logo">
+		<img src="images/logo.png"/>
+	
+	</div>
+		<a href="#"><input type="text" placeholder="search players"/></a>
+		<div class="profile">
+		<div>
+			<img src="images/profile.jpg" /> 
+			<span class="name">Todd Birk </span> 
+			<span style="display: inline-block;"> <a class="login" href="#" onmouseover="show3()"></a></span>
+			<span style="display: inline-block;"><a href="#" class="set-icon"></a></span>
+		</div>
+ <div class="edit-menu">
+   <ul id="editlist1" style="display:none;">
+      <li><a href="#"><span class="logout"></span>Logout</a></li>        
+      <li><a href="#"><span class="account-set"></span>Account Settings</a></li>        
+          
+    </ul>
+	</div>
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="menu">
+  <div class="container">
+  <ul class="orion-menu green" style="padding:0px;margin: 0;list-style: none;">
+  <li><a href="#">League</a>
+   <ul>
+  <li><a href="#">Home</a></li>
+  </ul>
+  </li>
+  <li>
+  <a href="#">My Team</a>
+  <ul>
+  <li><a href="#">Roster</a></li>
+  <li><a href="#">Settings</a></li>
+  </ul>
+   </li>
+  <li><a href="#">Players</a>
+  <ul>
+  <li><a href="#">Stats</a></li>
+  <li><a href="#">INJURY REPORT</a></li>
+  <li><a href="#">DEPTH CHARTS</a></li>
+  </ul>
+  </li>
+  <li><a href="#">Scores</a>
+   <ul>
+  <li><a href="#">FANTASY GAMETRACKER</a></li>
+  <li><a href="#">NFL GAMES</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Standings</a>
+  <ul>
+  <li><a href="#">OVERALL</a></li>
+  <li><a href="#">BREAKDOWN</a></li>
+  <li><a href="#">POWER RANKING</a></li>
+  <li><a href="#">TOURNAMENTS</a></li>
+  <li><a href="#">PLAYOFF RACE</a></li>
+  <li><a href="#">COACK OF THE YEAR</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Commisoner</a></li>
+  </ul>
+  </div>
+  <div class="clear"></div>
+  </div>
+  <div class="banner"><img src="images/banner.jpg"></div>
+  <div class="container">
+  <div class="text-center contant">
+  <h1>Fantasy Team Selection <br> <span>Todds Tough MOFOs<br>(3 - 6 - 0)</span></h1>
+  </div>
+  </div>
+  <div class="container">
+	<h1 class="title text-center">Fantasy Team Selection</h1>
+  </div>
+ <div class="container">
+<!-- <h1 class="title">Current Teams</h1>-->
+  	 
+<form name="team-div" id="team-div" method="post" onsubmit="return check_division();" style="width: 100%;float:left;">
+<input name="division_count" id="division_count" value="{$totcount}" type="hidden">
+<input name="hdaction" id="hdaction" value="" type="hidden">
+<div style="border: medium none; /*! margin-top: 50px; */"> <!-- width:700px !important; -->
+<!-- <ul class="team-menu">
+            <li class="active" id="tabs0td" style="padding:5px; border-left: 0px;" align="center">
+            <a href="#TQB" onclick="goTabtabs('tabs0');"><b>TQB</b></a></li>
+            <li class="bg1" id="tabs1td" style="padding:5px; " align="center">
+            <a href="#QB" onclick="goTabtabs('tabs1')"><b>RB</b></a></li>
+            <li class="bg1" id="tabs2td" style="padding:5px; " align="center">
+            <a href="#WR" onclick="goTabtabs('tabs2')"><b>WR</b></a></li>
+            <li class="bg1" id="tabs3td" style="padding:5px; " align="center">
+            <a href="#TE" onclick="goTabtabs('tabs3')"><b>TE</b></a></li>
+            <li class="bg1" id="tabs4td" style="padding:5px; " align="center">
+            <a href="#K" onclick="goTabtabs('tabs4')"><b>K</b></a></li>
+            <li class="bg1" id="tabs5td" style="padding:5px; " align="center">
+            <a href="#D" onclick="goTabtabs('tabs5')"><b>D</b></a></li>
+            <li class="bg1" id="tabs6td" style="padding:5px; border-right: 0px;" align="center">
+            <a href="#ST" onclick="goTabtabs('tabs6')"><b>ST</b></a></li>
+        </ul>     -->
+		    
+		<div class="clear"></div>
+            </div>
+     
+<div class="team-selection-div"> 
+<div class="team-menu">
+         <a class="active" id="tabs0td" href="#TQB" onclick="goTabtabs('tabs0');"><b>TQB</b></a>
+         <a class="bg1" id="tabs1td" href="#QB" onclick="goTabtabs('tabs1')"><b>RB</b></a>        
+         <a class="bg1" id="tabs2td" href="#WR" onclick="goTabtabs('tabs2')"><b>WR</b></a>
+         <a class="bg1" id="tabs3td" href="#TE" onclick="goTabtabs('tabs3')"><b>TE</b></a>
+         <a class="bg1" id="tabs4td" href="#K" onclick="goTabtabs('tabs4')"><b>K</b></a>
+         <a class="bg1" id="tabs5td" href="#D" onclick="goTabtabs('tabs5')"><b>D</b></a>
+         <a class="bg1" id="tabs6td" href="#ST" onclick="goTabtabs('tabs6')"><b>ST</b></a>
+		 
+        </div><!-- style="width:48%;float:right ;"-->
+
+
+ <div class="active" style="width:100%; height:300px; border-left:0px; border-right:0px; border-bottom:0px;">
+<div id="tabs0" style="top: 0px; left: 0px; display: block; margin: 1px;">
+ <select multiple="" id="TQB" name="TQB[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player0(); " size="10">
+    <option value="0" selected="selected">select</option>
+    <option value="49ers - TQB SF">49ers - TQB SF
+</option><option value="Bears - TQB CHI">Bears - TQB CHI
+</option><option value="Bengals - TQB CIN">Bengals - TQB CIN
+</option><option value="Bills - TQB BUF">Bills - TQB BUF
+</option><option value="Browns - TQB CLE">Browns - TQB CLE
+</option><option value="Buccaneers - TQB TB">Buccaneers - TQB TB
+</option><option value="Cardinals - TQB ARI">Cardinals - TQB ARI
+</option><option value="Chargers - TQB SD">Chargers - TQB SD
+</option><option value="Chiefs - TQB KC">Chiefs - TQB KC
+</option><option value="Dolphins - TQB MIA">Dolphins - TQB MIA
+</option><option value="Eagles - TQB PHI">Eagles - TQB PHI
+</option><option value="Giants - TQB NYG">Giants - TQB NYG
+</option><option value="Jets - TQB NYJ">Jets - TQB NYJ
+</option><option value="Lions - TQB DET">Lions - TQB DET
+</option><option value="Raiders - TQB OAK">Raiders - TQB OAK
+</option><option value="Rams - TQB LAR">Rams - TQB LAR
+</option><option value="Ravens - TQB BAL">Ravens - TQB BAL
+</option><option value="Texans - TQB HOU">Texans - TQB HOU
+</option><option value="Vikings - TQB MIN">Vikings - TQB MIN</option></select></div>
+<div id="tabs1" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="RB" name="RB[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player1(); " size="10">
+    <option value="0" selected="selected">select</option>
+    <option value="Abdullah, Ameer - RB DET">Abdullah, Ameer - RB DET
+</option><option value="Agnew, Ray - RB WAS">Agnew, Ray - RB WAS
+</option><option value="Allen, Javorius - RB BAL">Allen, Javorius - RB BAL
+</option><option value="Anderson, C.J. - RB DEN">Anderson, C.J. - RB DEN
+</option><option value="Andrews, Antonio - RB TEN">Andrews, Antonio - RB TEN
+</option><option value="Archer, Dri - RB BUF">Archer, Dri - RB BUF
+</option><option value="Artis-Payne, Cameron - RB CAR">Artis-Payne, Cameron - RB CAR
+</option><option value="Asiata, Matt - RB MIN">Asiata, Matt - RB MIN
+</option><option value="Atkinson, George - RB CLE">Atkinson, George - RB CLE
+</option><option value="Baker, Edwin - RB NO">Baker, Edwin - RB NO
+</option><option value="Baker, Jared - RB ARI">Baker, Jared - RB ARI
+</option><option value="Ball, Montee - RB NE">Ball, Montee - RB NE
+</option><option value="Ballard, Vick - RB NO">Ballard, Vick - RB NO
+</option><option value="Banyard, Joe - RB JAC">Banyard, Joe - RB JAC
+</option><option value="Barber, Peyton - RB TB">Barber, Peyton - RB TB
+</option><option value="Barner, Kenjon - RB PHI">Barner, Kenjon - RB PHI
+</option><option value="Bell, Joique - RB CHI">Bell, Joique - RB CHI
+</option><option value="Bergen, Sam - RB TEN">Bergen, Sam - RB TEN
+</option>
+</select></div>
+<div id="tabs2" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="WR" name="WR[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player2(); " size="10">
+    <option value="0" selected="selected">select</option>
+    <option value="Abbrederis, Jared - WR GB">Abbrederis, Jared - WR GB
+</option><option value="Addison, Bralon - WR DEN">Addison, Bralon - WR DEN
+</option><option value="Agholor, Nelson - WR PHI">Agholor, Nelson - WR PHI
+</option><option value="Aiken, Kamar - WR BAL">Aiken, Kamar - WR BAL
+</option><option value="Ajirotutu, Seyi - WR PHI">Ajirotutu, Seyi - WR PHI
+</option><option value="Alford, Mario - WR NYJ">Alford, Mario - WR NYJ
+</option><option value="Allen, Davonte - WR BUF">Allen, Davonte - WR BUF
+</option><option value="Allen, Keenan - WR SD">Allen, Keenan - WR SD
+</option><option value="Allen, Torrence - WR SD">Allen, Torrence - WR SD
+</option><option value="Allison, Geronimo - WR GB">Allison, Geronimo - WR GB
+</option><option value="Amendola, Danny - WR NE">Amendola, Danny - WR NE
+</option><option value="Anderson, Dres - WR SF">Anderson, Dres - WR SF
+</option><option value="Anderson, Joe - WR NYJ">Anderson, Joe - WR NYJ
+</option><option value="Anderson, Robby - WR NYJ">Anderson, Robby - WR NYJ
+</option><option value="Anthrop, Danny - WR IND">Anthrop, Danny - WR IND
+</option><option value="Aultman, Damarr - WR MIA">Aultman, Damarr - WR MIA
+</option><option value="Austin, Miles - WR PHI">Austin, Miles - WR PHI
+</option><option value="Austin, Tavon - WR LAR">Austin, Tavon - WR LAR
+</option><option value="Avant, Jason - WR KC">Avant, Jason - WR KC
+</option><option value="Ayers, DeMarcus - WR PIT">Ayers, DeMarcus - WR PIT
+</option><option value="Bailey, Rasheed - WR SD">Bailey, Rasheed - WR SD
+</option><option value="Bailey, Stedman - WR LAR">Bailey, Stedman - WR LAR
+</option><option value="Bates, Phil - WR DAL">Bates, Phil - WR DAL
+</option><option value="Beasley, Cole - WR DAL">Beasley, Cole - WR DAL
+</option><option value="Beathard, Bobo - WR ARI">Beathard, Bobo - WR ARI
+
+</option></select></div><div id="tabs3" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="TE" name="TE[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player3(); " size="10">
+     <option value="0" selected="selected">select</option>
+    <option value="Adams, Jerell - TE NYG">Adams, Jerell - TE NYG
+</option><option value="Allen, Dwayne - TE IND">Allen, Dwayne - TE IND
+</option><option value="Allen, RaShaun - TE HOU">Allen, RaShaun - TE HOU
+</option><option value="Amaro, Jace - TE TEN">Amaro, Jace - TE TEN
+</option><option value="Anderson, Rory - TE CHI">Anderson, Rory - TE CHI
+</option><option value="Anderson, Stephen - TE HOU">Anderson, Stephen - TE HOU
+</option><option value="Annen, Blake - TE BUF">Annen, Blake - TE BUF
+</option><option value="Ausberry, David - TE DET">Ausberry, David - TE DET
+</option><option value="Backman, Kennard - TE NE">Backman, Kennard - TE NE
+</option><option value="Barden, Brandon - TE DAL">Barden, Brandon - TE DAL
+</option><option value="Bayer, Alex - TE SD">Bayer, Alex - TE SD
+</option><option value="Beckum, Travis - TE NO">Beckum, Travis - TE NO
+</option><option value="Bell, Blake - TE SF">Bell, Blake - TE SF
+</option><option value="Bibbs, E.J. - TE CLE">Bibbs, E.J. - TE CLE
+</option><option value="Blanchflower, Rob - TE PIT">Blanchflower, Rob - TE PIT
+</option><option value="Bostick, Brandon - TE NYJ">Bostick, Brandon - TE NYJ
+</option><option value="Bowman, Braedon - TE NYJ">Bowman, Braedon - TE NYJ
+</option><option value="Boyle, Nick - TE BAL">Boyle, Nick - TE BAL
+</option><option value="Brate, Cameron - TE TB">Brate, Cameron - TE TB
+</option><option value="Braunecker, Ben - TE CHI">Braunecker, Ben - TE CHI
+</option><option value="Brock, Kevin - TE NO">Brock, Kevin - TE NO
+</option><option value="Brockel, Richie - TE CAR">Brockel, Richie - TE CAR
+</option><option value="Brown, Tim - TE TB">Brown, Tim - TE TB
+</option><option value="Browne, Benson - TE LAR">Browne, Benson - TE LAR
+</option><option value="Burton, Trey - TE PHI">Burton, Trey - TE PHI
+</option><option value="Cameron, Jordan - TE MIA">Cameron, Jordan - TE MIA
+</option><option value="Carrier, Derek - TE WAS">Carrier, Derek - TE WAS
+</option><option value="Carter, Kyle - TE MIN">Carter, Kyle - TE MIN
+</option><option value="Cartwright, Kivon - TE TB">Cartwright, Kivon - TE TB
+</option><option value="Casey, James - TE DEN">Casey, James - TE DEN
+</option><option value="Celek, Brent - TE PHI">Celek, Brent - TE PHI
+</option><option value="Celek, Garrett - TE SF">Celek, Garrett - TE SF
+</option></select></div><div id="tabs4" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="K" name="K[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player4(); " size="10">
+     <option value="0" selected="selected">select</option>
+    <option value="Acosta, Corey - K SF">Acosta, Corey - K SF
+</option><option value="Aguayo, Roberto - K TB">Aguayo, Roberto - K TB
+</option><option value="Barth, Connor - K CHI">Barth, Connor - K CHI
+</option><option value="Bell, Devon - K DET">Bell, Devon - K DET
+</option><option value="Bertolet, Taylor - K LAR">Bertolet, Taylor - K LAR
+</option><option value="Bogotay, Brandon - K TB">Bogotay, Brandon - K TB
+</option><option value="Boswell, Chris - K PIT">Boswell, Chris - K PIT
+</option><option value="Brindza, Kyle - K NYJ">Brindza, Kyle - K NYJ
+</option><option value="Brown, Jon - K CIN">Brown, Jon - K CIN
+</option><option value="Brown, Josh - K NYG">Brown, Josh - K NYG
+</option><option value="Bullock, Randy - K NYG">Bullock, Randy - K NYG
+</option><option value="Cantele, Anthony - K FA">Cantele, Anthony - K FA
+</option><option value="Carpenter, Dan - K BUF">Carpenter, Dan - K BUF
+</option><option value="Catanzaro, Chandler - K ARI">Catanzaro, Chandler - K ARI
+</option><option value="Conroy, Dan - K FA">Conroy, Dan - K FA
+</option><option value="Coons, Travis - K CLE">Coons, Travis - K CLE
+</option><option value="Craddock, Brad - K CLE">Craddock, Brad - K CLE
+</option><option value="Cundiff, Billy - K BUF">Cundiff, Billy - K BUF
+</option><option value="Dawson, Phil - K SF">Dawson, Phil - K SF
+</option><option value="Fairbairn, Ka'imi - K HOU">Fairbairn, Ka'imi - K HOU
+</option><option value="Fera, Anthony - K FA">Fera, Anthony - K FA
+</option><option value="Ficken, Sam - K JAC">Ficken, Sam - K JAC
+</option><option value="Folk, Nick - K NYJ">Folk, Nick - K NYJ
+</option></select></div><div id="tabs5" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="D" name="D[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player5(); " size="10">
+       <option value="0" selected="selected">select</option>
+    <option value="49ers - D SF">49ers - D SF
+</option><option value="Bears - D CHI">Bears - D CHI
+</option><option value="Bills - D BUF">Bills - D BUF
+</option><option value="Browns - D CLE">Browns - D CLE
+</option><option value="Buccaneers - D TB">Buccaneers - D TB
+</option><option value="Colts - D IND">Colts - D IND
+</option><option value="Eagles - D PHI">Eagles - D PHI
+</option><option value="Falcons - D ATL">Falcons - D ATL
+</option><option value="Jaguars - D JAC">Jaguars - D JAC
+</option><option value="Lions - D DET">Lions - D DET
+</option><option value="Packers - D GB">Packers - D GB
+</option><option value="Panthers - D CAR">Panthers - D CAR
+</option><option value="Raiders - D OAK">Raiders - D OAK
+</option><option value="Ravens - D BAL">Ravens - D BAL
+</option><option value="Redskins - D WAS">Redskins - D WAS
+</option><option value="Saints - D NO">Saints - D NO
+</option><option value="Steelers - D PIT">Steelers - D PIT
+</option><option value="Titans - D TEN">Titans - D TEN</option></select></div>
+<div id="tabs6" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="ST" name="ST[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;  width: 100%;" onchange="add_player6(); " size="10">
+   <option value="0" selected="selected"> select</option>
+<option value="49ers - ST SF">49ers - ST SF</option>
+<option value="Bengals - ST CIN">Bengals - ST CIN
+</option><option value="Broncos - ST DEN">Broncos - ST DEN
+</option><option value="Browns - ST CLE">Browns - ST CLE
+</option><option value="Buccaneers - ST TB">Buccaneers - ST TB
+</option><option value="Chargers - ST SD">Chargers - ST SD
+</option><option value="Colts - ST IND">Colts - ST IND
+</option><option value="Cowboys - ST DAL">Cowboys - ST DAL
+</option><option value="Falcons - ST ATL">Falcons - ST ATL
+</option><option value="Giants - ST NYG">Giants - ST NYG
+</option><option value="Packers - ST GB">Packers - ST GB
+</option><option value="Panthers - ST CAR">Panthers - ST CAR
+</option><option value="Patriots - ST NE">Patriots - ST NE
+</option><option value="Ravens - ST BAL">Ravens - ST BAL
+</option><option value="Redskins - ST WAS">Redskins - ST WAS
+</option><option value="Saints - ST NO">Saints - ST NO
+</option><option value="Seahawks - ST SEA">Seahawks - ST SEA
+</option><option value="Steelers - ST PIT">Steelers - ST PIT
+</option><option value="Titans - ST TEN">Titans - ST TEN</option></select></div>
+            </div>
+
+
+		
+<!-- <div id="selected_team0" style="margin-top: 123px; display: none;">
+</div>
+<br>
+<div id="selected_team1" style="margin-top: 12px; display: none;">
+</div>
+<br>
+<div id="selected_team2" style="margin-top: 12px; display: none;"></div><br>
+<div id="selected_team3" style="margin-top: 12px;display: none;"></div><br>
+<div id="selected_team4" style="margin-top: 12px;display: none;"></div><br>
+<div id="selected_team5" style="margin-top: 12px;display: none;"></div><br>
+<div id="selected_teams6" style="margin-top: 12px;"></div><br>
+ 
+
+
+	 
+
+    -->
+ 
+ <div class="clear"></div>
+ </div>
+ 
+ <div class="team-contant-div">
+ <p class="ali-ri"><span>*</span>Select 1QB, 2RB, 2WR, 1TE, 1K, 1DEF and 1 ST</p>
+ 
+ <div class="table-div1 new-table">
+<div class="table-maindiv">
+<div class="table-subdiv">
+<!-- <div class="table-head width1"><h3>Position</h3></div> -->
+<div class="table-head"><h3>Name</h3></div>
+<div class="table-head"><h3>Team</h3></div>
+<div class="table-head"><h3>Game</h3></div>
+<!-- <div class="table-head width1"><h3 class="text-ri">Score</h3></div> -->
+<div class="clear"></div>
+</div>
+<div class="table-subdiv" style="background-color: #BF093A !important;color: #fff;">
+<!-- <div class="table-contant width1"><h3>QB</h3></div> -->
+<div class="table-contant"><p>Aaron Rodgers</p></div>
+<div class="table-contant"><p>Green Bay Packers</p></div>
+<div class="table-contant"><p>@ Jacksonville</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">1.740</h3></div> -->
+<div class="clear"></div>
+</div>
+
+<div class="table-subdiv">
+<!-- <div class="table-contant width1"><h3>RB</h3></div> -->
+<div class="table-contant"><p>Todd Gurley</p></div>
+<div class="table-contant"><p>Los Angeles Rams</p></div>
+<div class="table-contant"><p>@ San Fransisco</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">0.000</h3></div> -->
+<div class="clear"></div>
+</div>
+</div>
+</div>
+ 
+ <div class="table-div1 new-table">
+<div class="table-maindiv">
+<div class="table-subdiv">
+<!-- <div class="table-head width1"><h3>Position</h3></div> -->
+<div class="table-head"><h3>Name</h3></div>
+<div class="table-head"><h3>Team</h3></div>
+<div class="table-head"><h3>Game</h3></div>
+<!-- <div class="table-head width1"><h3 class="text-ri">Score</h3></div> -->
+<div class="clear"></div>
+</div>
+<div class="table-subdiv bg-bal">
+<!-- <div class="table-contant width1"><h3>QB</h3></div> -->
+<div class="table-contant"><p>Aaron Rodgers</p></div>
+<div class="table-contant"><p>Green Bay Packers</p></div>
+<div class="table-contant"><p>@ Jacksonville</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">1.740</h3></div> -->
+<div class="clear"></div>
+</div>
+
+<div class="table-subdiv bg-cin">
+<!-- <div class="table-contant width1"><h3>RB</h3></div> -->
+<div class="table-contant"><p>Todd Gurley</p></div>
+<div class="table-contant"><p>Los Angeles Rams</p></div>
+<div class="table-contant"><p>@ San Fransisco</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">0.000</h3></div> -->
+<div class="clear"></div>
+</div>
+</div>
+</div>
+ 
+ <div class="table-div1 new-table">
+<div class="table-maindiv">
+<div class="table-subdiv">
+<!-- <div class="table-head width1"><h3>Position</h3></div> -->
+<div class="table-head"><h3>Name</h3></div>
+<div class="table-head"><h3>Team</h3></div>
+<div class="table-head"><h3>Game</h3></div>
+<!-- <div class="table-head width1"><h3 class="text-ri">Score</h3></div> -->
+<div class="clear"></div>
+</div>
+<div class="table-subdiv bg-cle">
+<!-- <div class="table-contant width1"><h3>QB</h3></div> -->
+<div class="table-contant"><p>Aaron Rodgers</p></div>
+<div class="table-contant"><p>Green Bay Packers</p></div>
+<div class="table-contant"><p>@ Jacksonville</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">1.740</h3></div> -->
+<div class="clear"></div>
+</div>
+
+<div class="table-subdiv bg-pit">
+<!-- <div class="table-contant width1"><h3>RB</h3></div> -->
+<div class="table-contant"><p>Todd Gurley</p></div>
+<div class="table-contant"><p>Los Angeles Rams</p></div>
+<div class="table-contant"><p>@ San Fransisco</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">0.000</h3></div> -->
+<div class="clear"></div>
+</div>
+</div>
+</div>
+ 
+ <div class="table-div1 new-table">
+<div class="table-maindiv">
+<div class="table-subdiv">
+<!-- <div class="table-head width1"><h3>Position</h3></div> -->
+<div class="table-head"><h3>Name</h3></div>
+<div class="table-head"><h3>Team</h3></div>
+<div class="table-head"><h3>Game</h3></div>
+<!-- <div class="table-head width1"><h3 class="text-ri">Score</h3></div> -->
+<div class="clear"></div>
+</div>
+<div class="table-subdiv bg-hou">
+<!-- <div class="table-contant width1"><h3>QB</h3></div> -->
+<div class="table-contant"><p>Aaron Rodgers</p></div>
+<div class="table-contant"><p>Green Bay Packers</p></div>
+<div class="table-contant"><p>@ Jacksonville</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">1.740</h3></div> -->
+<div class="clear"></div>
+</div>
+
+<div class="table-subdiv bg-ind">
+<!-- <div class="table-contant width1"><h3>RB</h3></div> -->
+<div class="table-contant"><p>Todd Gurley</p></div>
+<div class="table-contant"><p>Los Angeles Rams</p></div>
+<div class="table-contant"><p>@ San Fransisco</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">0.000</h3></div> -->
+<div class="clear"></div>
+</div>
+</div>
+</div>
+ 
+ <div class="table-div1 new-table">
+<div class="table-maindiv">
+<div class="table-subdiv">
+<!-- <div class="table-head width1"><h3>Position</h3></div> -->
+<div class="table-head"><h3>Name</h3></div>
+<div class="table-head"><h3>Team</h3></div>
+<div class="table-head"><h3>Game</h3></div>
+<!-- <div class="table-head width1"><h3 class="text-ri">Score</h3></div> -->
+<div class="clear"></div>
+</div>
+<div class="table-subdiv bg-jax">
+<!-- <div class="table-contant width1"><h3>QB</h3></div> -->
+<div class="table-contant"><p>Aaron Rodgers</p></div>
+<div class="table-contant"><p>Green Bay Packers</p></div>
+<div class="table-contant"><p>@ Jacksonville</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">1.740</h3></div> -->
+<div class="clear"></div>
+</div>
+
+<div class="table-subdiv bg-ten">
+<!-- <div class="table-contant width1"><h3>RB</h3></div> -->
+<div class="table-contant"><p>Todd Gurley</p></div>
+<div class="table-contant"><p>Los Angeles Rams</p></div>
+<div class="table-contant"><p>@ San Fransisco</p>
+</div>
+<!-- <div class="table-contant width1"><h3 class="text-ri">0.000</h3></div> -->
+<div class="clear"></div>
+</div>
+</div>
+</div>
+ 
+
+ 
+ 
+ <div class="btn-div team-sub-btn">
+	 <input class="add-team-btn" value="Submit Team" type="button">
+     <div class="clear"></div>
+     </div>
+ 
+<!-- <div class="table-div current-team new-table">
+ <table>
+<tbody>
+<tr class="head">
+<th>gddhfjdkfkj</th>
+<th>gddhfjdkfkj</th>
+<th>gddhfjdkfkj</th>
+</tr>
+
+<tr>
+<td>1222</td>
+<td>hgvhjgh</td>
+<td>gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td>1222</td>
+<td>hgvhjgh</td>
+<td>gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td>1222</td>
+<td>hgvhjgh</td>
+<td>gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td>1222</td>
+<td>hgvhjgh</td>
+<td>gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td>1222</td>
+<td>hgvhjgh</td>
+<td>gdjfhgdufkhak</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="table-div current-team new-table" style="margin-top:20px;">
+ <table>
+<tbody>
+<tr class="head">
+<th>gddhfjdkfkj</th>
+<th>gddhfjdkfkj</th>
+<th>gddhfjdkfkj</th>
+</tr>
+
+ <table>
+<tbody>
+<tr>
+<td class="width-new">1222</td>
+<td class="width-new">hgvhjgh</td>
+<td class="width-new">gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td class="width-new">1222</td>
+<td class="width-new">hgvhjgh</td>
+<td class="width-new">gdjfhgdufkhak</td>
+</tr>
+</tbody>
+</table>
+ <table>
+<tbody>
+<tr>
+<td class="width-new">1222</td>
+<td class="width-new">hgvhjgh</td>
+<td class="width-new">gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td class="width-new">1222</td>
+<td class="width-new">hgvhjgh</td>
+<td class="width-new">gdjfhgdufkhak</td>
+</tr>
+</tbody>
+</table>
+ <table>
+<tbody>
+<tr>
+<td class="width-new">1222</td>
+<td class="width-new">hgvhjgh</td>
+<td class="width-new">gdjfhgdufkhak</td>
+</tr>
+<tr>
+<td class="width-new">1222</td>
+<td class="width-new">hgvhjgh</td>
+<td class="width-new">gdjfhgdufkhak</td>
+</tr>
+</tbody>
+</table>
+</tbody>
+</table>
+</div>
+
+ -->
+</div>
+
+</form>
+ </div>
+   <div class="footer">
+   <div class="container">
+   <div class="text-center">
+   <div class="social">
+   <div>
+   <a href="#" class="fb-icon"></a>
+   <a href="#" class="tweet-icon"></a>
+   <a href="#" class="google-icon"></a>
+   <a href="#" class="youtupe-icon"></a>
+   <a href="#" class="instagram-icon"></a>
+   <a href="#" class="pintrest-icon"></a>
+   </div>
+   <p>© 2005-2016 CBS INTERACTIVE. ALL RIGHTS RESERVED.</p>
+   <p>CBS Sports is a registered trademark of CBS Broadcasting Inc.</p>
+
+   </div>
+   
+   
+   </div>
+   </div>
+   
+   </div>
+   
+<script src="js/jquery.min.js"></script>
+<script src="js/maps.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){$().orion({speed:500,animation: "zoom"});});
+</script>
+<script>
+ function show3() { 
+	<!--  alert("Hello! I am an alert box!!"); -->
+         if(document.getElementById('editlist1').style.display=='none') { 
+            document.getElementById('editlist1').style.display='block'; 
+			<!-- alert("Hello! I am an alert box!!2"); -->
+				
+		    } 
+        
+      else if(document.getElementById('editlist1').style.display=='block') { 
+	  <!-- alert("Hello! I am an alert box!!3"); -->
+	            document.getElementById('editlist1').style.display='none'; 
+			    } 
+    }
+</script>
+ <script>
+ function check_division()
+ {
+ 	var TQB=document.getElementById('TQB').value;
+ 	var RB=document.getElementById('RB').value;
+ 	var WR=document.getElementById('WR').value;
+ 	var TE=document.getElementById('TE').value;
+ 	var K=document.getElementById('K').value;
+ 	var D=document.getElementById('D').value;
+ 	var ST=document.getElementById('ST').value;
+	var ATQB=document.getElementById('ATQB').value;
+ 	var ARB=document.getElementById('ARB').value;
+ 	var AWR=document.getElementById('AWR').value;
+ 	var ATE=document.getElementById('ATE').value;
+ 	var AK=document.getElementById('AK').value;
+ 	var AD=document.getElementById('AD').value;
+ 	var AST=document.getElementById('AST').value;
+ 	if(TQB=='0' && RB=='0' && WR=='0' && TE=='0' && K=='0' && D=='0' && ST=='0'  ){
+ 	 	alert('please choose players');
+ 		return false;
+ 	}
+ 	else if(TQB=='' && RB==''  && WR=='' && TE=='' && K=='' && D=='' && ST==''  ){
+ 	 	alert('please choose players');
+ 		return false;
+ 	}
+	if(ATQB=='0' && ARB=='0' && AWR=='0' && ATE=='0' && AK=='0' && AD=='0' && AST=='0'  ){
+ 	 	alert('please choose players');
+ 		return false;
+ 	}
+ 	else if(ATQB=='' && ARB=='' && AWR=='' && ATE=='' && AK=='' && AD=='' && AST==''  ){
+ 	 	alert('please choose players');
+ 		return false;
+ 	}
+ 	else
+ 	{
+ 	$('#hdaction').val('1');
+ 	}
+ }
+
+$(document).ready(function () {
+	 $('#TQB').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#RB').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#WR').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#TE').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#K').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#D').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#ST').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+
+	document.getElementById("tabs0").style.display = "block";
+});
+
+$(document).ready(function () {
+	 $('#ATQB').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#ARB').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#AWR').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#ATE').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#AK').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#AD').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#AST').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+
+	document.getElementById("tabs0").style.display = "block";
+	document.getElementById("atabs0").style.display = "block";
+});
+
+
+function add_player0()
+{
+	//alert('');
+	 document.getElementById("selected_team0").innerHTML='';
+	 document.getElementById("selected_team0").style.display = "block";
+	$('#TQB :selected').each(function(i, sel){ 
+	 //  alert( $(sel).text()); '
+	
+    document.getElementById("selected_team0").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+
+function add_player1()
+{
+	 document.getElementById("selected_team1").style.display = "block";
+	 document.getElementById("selected_team1").innerHTML='';
+	//alert('');
+	$('#RB :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+	document.getElementById("selected_team1").innerHTML += $(sel).text()+'</br>';
+
+	});
+	
+}
+function add_player2()
+{
+	 document.getElementById("selected_team2").style.display = "block";
+	 document.getElementById("selected_team2").innerHTML='';
+	//alert('');
+	$('#WR :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team2").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_player3()
+{
+	 document.getElementById("selected_team3").style.display = "block";
+	 document.getElementById("selected_team3").innerHTML='';
+	//alert('');
+	$('#TE :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team3").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_player4()
+{
+	 document.getElementById("selected_team4").style.display = "block";
+	 document.getElementById("selected_team4").innerHTML='';
+	//alert('');
+	$('#K :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team4").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_player5()
+{
+	 document.getElementById("selected_team5").style.display = "block";
+	 document.getElementById("selected_team5").innerHTML='';
+	//alert('');
+	$('#D :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team5").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_player6()
+{
+	 document.getElementById("selected_teams6").style.display = "block";
+	 document.getElementById("selected_teams6").innerHTML='';
+	//alert('');
+	$('#ST :selected').each(function(i, sel){ 
+	    //alert( $(sel).text()); 
+		document.getElementById("selected_teams6").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+
+
+function add_playera0()
+{
+	//alert('');
+	 document.getElementById("selected_team_afc_0").innerHTML='';
+	 document.getElementById("selected_team_afc_0").style.display = "block";
+	$('#ATQB :selected').each(function(i, sel){ 
+	 //  alert( $(sel).text()); '
+	
+    document.getElementById("selected_team_afc_0").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+
+function add_playera1()
+{
+	 document.getElementById("selected_team_afc_1").style.display = "block";
+	 document.getElementById("selected_team_afc_1").innerHTML='';
+	//alert('');
+	$('#ARB :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+	document.getElementById("selected_team_afc_1").innerHTML += $(sel).text()+'</br>';
+
+	});
+	
+}
+function add_playera2()
+{
+	 document.getElementById("selected_team_afc_2").style.display = "block";
+	 document.getElementById("selected_team_afc_2").innerHTML='';
+	//alert('');
+	$('#AWR :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team_afc_2").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_playera3()
+{
+	 document.getElementById("selected_team_afc_3").style.display = "block";
+	 document.getElementById("selected_team_afc_3").innerHTML='';
+	//alert('');
+	$('#ATE :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team_afc_3").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_playera4()
+{
+	 document.getElementById("selected_team_afc_4").style.display = "block";
+	 document.getElementById("selected_team_afc_4").innerHTML='';
+	//alert('');
+	$('#AK :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team_afc_4").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_playera5()
+{
+	 document.getElementById("selected_team_afc_5").style.display = "block";
+	 document.getElementById("selected_team_afc_5").innerHTML='';
+	//alert('');
+	$('#AD :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team_afc_5").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function add_playera6()
+{
+	 document.getElementById("selected_team_afc_6").style.display = "block";
+	 document.getElementById("selected_team_afc_6").innerHTML='';
+	//alert('');
+	$('#AST :selected').each(function(i, sel){ 
+	   // alert( $(sel).text()); 
+		document.getElementById("selected_team_afc_6").innerHTML += $(sel).text()+'</br>';
+	});
+	
+}
+function goTabtabs(val) {
+	//alert('');
+	
+    if (val == "tabs0") {
+       
+		document.getElementById("tabs0").style.display = "block";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs1") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "block";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs2") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "block";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs3") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "block";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs4") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "block";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs5") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "block";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs6") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "block";
+			
+    } 
+   
+	
+}
+
+
+
+function goTabtabs0(val) {
+	//alert('');
+	
+    if (val == "tabs0") {
+       
+		document.getElementById("atabs0").style.display = "block";
+		document.getElementById("atabs1").style.display = "none";
+		document.getElementById("atabs2").style.display = "none";
+		document.getElementById("atabs3").style.display = "none";
+		document.getElementById("atabs4").style.display = "none";
+		document.getElementById("atabs5").style.display = "none";
+		document.getElementById("atabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs1") {
+       
+		document.getElementById("atabs0").style.display = "none";
+		document.getElementById("atabs1").style.display = "block";
+		document.getElementById("atabs2").style.display = "none";
+		document.getElementById("atabs3").style.display = "none";
+		document.getElementById("atabs4").style.display = "none";
+		document.getElementById("atabs5").style.display = "none";
+		document.getElementById("atabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs2") {
+       
+		document.getElementById("atabs0").style.display = "none";
+		document.getElementById("atabs1").style.display = "none";
+		document.getElementById("atabs2").style.display = "block";
+		document.getElementById("atabs3").style.display = "none";
+		document.getElementById("atabs4").style.display = "none";
+		document.getElementById("atabs5").style.display = "none";
+		document.getElementById("atabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs3") {
+       
+		document.getElementById("atabs0").style.display = "none";
+		document.getElementById("atabs1").style.display = "none";
+		document.getElementById("atabs2").style.display = "none";
+		document.getElementById("atabs3").style.display = "block";
+		document.getElementById("atabs4").style.display = "none";
+		document.getElementById("atabs5").style.display = "none";
+		document.getElementById("atabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs4") {
+       
+		document.getElementById("atabs0").style.display = "none";
+		document.getElementById("atabs1").style.display = "none";
+		document.getElementById("atabs2").style.display = "none";
+		document.getElementById("atabs3").style.display = "none";
+		document.getElementById("atabs4").style.display = "block";
+		document.getElementById("atabs5").style.display = "none";
+		document.getElementById("atabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs5") {
+       
+		document.getElementById("atabs0").style.display = "none";
+		document.getElementById("atabs1").style.display = "none";
+		document.getElementById("atabs2").style.display = "none";
+		document.getElementById("atabs3").style.display = "none";
+		document.getElementById("atabs4").style.display = "none";
+		document.getElementById("atabs5").style.display = "block";
+		document.getElementById("atabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs6") {
+       
+		document.getElementById("atabs0").style.display = "none";
+		document.getElementById("atabs1").style.display = "none";
+		document.getElementById("atabs2").style.display = "none";
+		document.getElementById("atabs3").style.display = "none";
+		document.getElementById("atabs4").style.display = "none";
+		document.getElementById("atabs5").style.display = "none";
+		document.getElementById("atabs6").style.display = "block";
+			
+    } 
+   
+	
+}
+</script>
+<script>
+  $('.team-menu > a').on('click', function() {
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+  });    
+</script>
+</body>
+</html>

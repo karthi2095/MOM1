@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>:- Fantasy Football :-</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  </head>
+   <script>
+  
+  function changepage(id)
+  {
+	 
+	  if(id == 'QB')
+		{
+			 // alert(id);
+			  window.location.href = 'players.html';
+		}
+	  if(id == 'RB')
+		{
+				 // alert(id);
+				  window.location.href = 'players_rb.html';
+		}
+	  if(id == 'WR')
+		{
+				 // alert(id);
+				  window.location.href = 'players_wr.html';
+		}
+	  if(id == 'TE')
+		{
+				 // alert(id);
+				  window.location.href = 'players_te.html';
+		}
+	  if(id == 'K')
+		{
+				 // alert(id);
+				  window.location.href = 'players_k.html';
+		}
+  }
+  
+  </script>
+  <body>
+  <div class="header">
+  <div class="container">
+	<div class="text-center">
+	<div class="logo">
+		<img src="images/logo.png"/>
+	
+	</div>
+		<a href="#"><input type="text" placeholder="search players"/></a>
+		<div class="profile">
+		<div>
+			<img src="images/profile.jpg" /> 
+			<span class="name">Todd Birk </span> 
+			<span> <a class="login" href="#"></a></span>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="menu">
+  <div class="container">
+  <ul>
+  <li><a href="#">Leauge</a></li>
+  <li><a href="#">My Team</a></li>
+  <li><a href="#">Players</a></li>
+  <li><a href="#">Scores</a></li>
+  <li><a href="#">Standings</a></li>
+  <li><a href="#">Commisoner</a></li>
+  </ul>
+  </div>
+  <div class="clear"></div>
+  </div>
+  <div class="banner"><img src="images/banner.jpg"></div>
+  
+  <div class="container">
+  <div class="text-center contant">
+  <h1 style="margin:0px;"><span style="font-size: 12px;">Todds Tough MOFOs(2 - 6 - 0)</span><br>Depth Charts</h1>
+  <p>Position
+  <select name="Position" id="Position" onchange="changepage(this.value)">
+  <option value="QB" selected="selected">QB</option>
+  <option value="RB" >RB</option>
+  <option value="WR">WR</option>
+  <option value="TE">TE</option>
+  <option value="K" >K</option>
+  </select> </p>
+
+
+  </div>
+  </div>
+  
+   <div class="container">
+   <h1 class="title">NFC Teams</h1>
+   <table>
+   <tbody>
+   <tr class="head">
+      <th>Team</th>
+      <th>Starter</th>
+      <th>Backup</th>
+      <th>Reserves</th>
+   </tr>
+   <tr>
+		<td>ARI</td>
+		<td><a href="#"><span class="star">*</span> Carson Palmer</a> <a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Drew Stanton</a></td>
+		<td></td>
+   </tr>
+   <tr>
+		<td>ATL</td>
+		<td><a href="#"><span class="star">*</span> Matt Ryan</a></td>
+		<td><a href="#"><span class="star">*</span> Matt Schaub</a></td>
+		<td></td>
+   </tr>
+   <tr>
+		<td>CAR</td>
+		<td><a href="#"><span class="star">*</span> Cam Newton</a> <a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Derek Anderson</a></td>
+		<td><a href="#"><span class="star">*</span> Joe Webb</a></td>
+   </tr>
+   <tr>
+		<td>CHI</td>
+		<td><a href="#"><span class="star">*</span> Jay Cutler</a></td>
+		<td><a href="#"><span class="star">*</span> Matt Barkley</a></td>
+		<td><a href="#"><span class="star">*</span> Brian Hoyer</a> <a href="#"><span class="ir-icon"></span></a> <br>
+			<a href="#"><span class="star">*</span> Connor Shaw</a> <a href="#"><span class="ir-icon"></span></a>
+		</td>
+   </tr>
+   <tr>
+		<td>DAL</td>
+		<td><a href="#"><span class="star">*</span> Dak Prescott</a> <a href="#"><span class="hot-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Mark Sanchez</a></td>
+		<td><a href="#"><span class="star">*</span> Tony Romo</a> <!-- <a href="#"><span class="news-icon"></span></a> --> 
+		<a href="#"><span class="injury-icon"></span></a><br>
+		<a href="#"><span class="star">*</span> Kellen Moore</a> <a href="#"><span class="ir-icon"></span></a>
+		</td>
+   </tr>
+   <tr>
+		<td>DET</td>
+		<td><a href="#"><span class="star">*</span> Matthew Stafford</a></td>
+		<td><a href="#"><span class="star">*</span> Dan Orlovsky</a></td>
+		<td></td>
+   </tr>
+   <tr>
+		<td>GB</td>
+		<td><a href="#"><span class="star">*</span> Case Keenum</a> <a href="#"><span class="hot-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Jared Goff</a></td>
+		<td><a href="#"><span class="star">*</span> Sean Mannion</a></td>
+   </tr>
+   <tr>
+		<td>MIN</td>
+		<td><a href="#"><span class="star">*</span> Sam Bradford</a></td>
+		<td><a href="#"><span class="star">*</span> Shaun Hill</a></td>
+		<td><a href="#"><span class="star">*</span> Teddy Bridgewater <a href="#"><span class="ir-icon"></span></a></a></td>
+   </tr>
+   <tr>
+		<td>NO</td>
+		<td><a href="#"><span class="star">*</span> Drew Brees</a></td>
+		<td><a href="#"><span class="star">*</span> Luke McCown</a></td>
+		<td></td>
+   </tr>
+      <tr>
+		<td>NYG</td>
+		<td><a href="#"><span class="star">*</span> Eli Manning</a></td>
+		<td><a href="#"><span class="star">*</span> Ryan Nassib</a> <a href="#"><span class="injury-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Josh Johnson</a></td>
+   </tr>
+      <tr>
+		<td>PHI</td>
+		<td><a href="#"><span class="star">*</span> Carson Wentz</a></td>
+		<td><a href="#"><span class="star">*</span> Chase Daniel</a></td>
+		<td></td>
+   </tr>
+   <tr>
+		<td>SEA</td>
+		<td><a href="#"><span class="star">*</span> Russell Wilson</a><a href="#"><span class="cold-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Trevone Boykin</a></td>
+		<td></td>
+   </tr>
+      <tr>
+		<td>SF</td>
+		<td><a href="#"><span class="star">*</span> Colin Kaepernick</a><a href="#"><span class="hot-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Blaine Gabbert</a></td>
+		<td><a href="#"><span class="star">*</span> Christian Ponder</a><br>
+			<a href="#"><span class="star">*</span> Thad Lewis</a> <a href="#"><span class="ir-icon"></span></a>
+		</td>
+   </tr>
+   <tr>
+		<td>TB</td>
+		<td><a href="#"><span class="star">*</span> Jameis Winston</a></td>
+		<td><a href="#"><span class="star">*</span> Mike Glennon</a></td>
+		<td><a href="#"><span class="star">*</span> Ryan Griffin</a></td>
+   </tr>
+   <tr>
+		<td>WAS</td>
+		<td><a href="#"><span class="star">*</span> Kirk Cousins</a> <a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Colt McCoy</a></td>
+		<td><a href="#"><span class="star">*</span> Nate Sudfeld</a></td>
+   </tr>
+
+   </tbody>
+   </table>
+   <!-- table1 completed--->
+   
+      <h1 class="title" style="margin-top:20px;">AFC Teams</h1>
+      <table>
+   <tbody>
+   <tr class="head">
+      <th>Team</th>
+      <th>Starter</th>
+      <th>Backup</th>
+      <th>Reserves</th>
+   </tr>
+
+      <tr>
+		<td>BAL</td>
+		<td><a href="#"><span class="star">*</span> Joe Flacco </a><a href="#"><span class="hot-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Ryan Mallett</a></td>
+		<td></td>
+   </tr>
+	
+   <tr>
+		<td>BUF</td>
+		<td><a href="#"><span class="star">*</span> Tyrod Taylor</a><a href="#"><span class="cold-icon"></span></a> <a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> EJ Manuel</a></td>
+		<td><a href="#"><span class="star">*</span> Cardale Jones</a></td>
+   </tr>
+   <tr>
+		<td>CIN</td>
+		<td><a href="#"><span class="star">*</span> Andy Dalton</a></td>
+		<td><a href="#"><span class="star">*</span> AJ McCarron</a></td>
+		<td><a href="#"><span class="star">*</span> Jeff Driskel</a></td>
+   </tr>
+   <tr>
+		<td>CLE</td>
+		<td><a href="#"><span class="star">*</span> Josh McCown</a><a href="#"><span class="cold-icon"></span></a> <a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Cody Kessler</a> <a href="#"><span class="news-icon"></span></a> <a href="#"><span class="hot-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Kevin Hogan</a><br>
+		<a href="#"><span class="star">*</span> Joe Callahan</a><br>
+		<a href="#"><span class="star">*</span> Robert Griffin III</a><a href="#"><span class="ir-icon"></span></a></td>
+   </tr>
+   <tr>
+		<td>DEN</td>
+		<td><a href="#"><span class="star">*</span> Trevor Siemian</a></td>
+		<td><a href="#"><span class="star">*</span> Paxton Lynch</a></td>
+		<td><a href="#"><span class="star">*</span> Austin Davis</a></td>
+   </tr>
+   <tr>
+		<td>HOU</td>
+		<td><a href="#"><span class="star">*</span> Brock Osweiler</a></td>
+		<td><a href="#"><span class="star">*</span> Tom Savage</a></td>
+		<td><a href="#"><span class="star">*</span> Brandon Weeden</a> <a href="#"><span class="news-icon"></span></a> 
+		</td>
+   </tr>
+  
+     <tr>
+		<td>IND</td>
+		<td><a href="#"><span class="star">*</span> Andrew Luck</a></td>
+		<td><a href="#"><span class="star">*</span> Scott Tolzien	</a></td>
+		<td></td>
+   </tr>
+   <tr>
+		<td>JAC</td>
+		<td><a href="#"><span class="star">*</span> Blake Bortles</a></td>
+		<td><a href="#"><span class="star">*</span> Chad Henne</a></td>
+		<td><a href="#"><span class="star">*</span> Brandon Allen</a></td>
+   </tr>
+   <tr>
+		<td>KC</td>
+		<td><a href="#"><span class="star">*</span> Alex Smith</a><a href="#"><span class="news-icon"></span></a> <a href="#"><span class="injury-icon"></span></a><a href="#"><span class="play-icon"></span></a> </td>
+		<td><a href="#"><span class="star">*</span> Nick Foles </a> <a href="#"><span class="news-icon"></span></a> <a href="#"><span class="hot-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Tyler Bray</a></td>
+   </tr>
+
+   <tr>
+		<td>MIA</td>
+		<td><a href="#"><span class="star">*</span> Ryan Tannehill </a>  <a href="#"><span class="hot-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Matt Moore</a></td>
+		<td></td>
+   </tr>
+      <tr>
+		<td>NE</td>
+		<td><a href="#"><span class="star">*</span> Tom Brady</a></td>
+		<td><a href="#"><span class="star">*</span> Jimmy Garoppolo</a></td>
+		<td><a href="#"><span class="star">*</span> Jacoby Brissett</a>  <a href="#"><span class="ir-icon"></span></a></td>
+   </tr>
+              
+
+      <tr>
+		<td>NYJ</td>
+		<td><a href="#"><span class="star">*</span> Ryan Fitzpatrick</a>  <a href="#"><span class="cold-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Bryce Petty</a></td>
+		<td><a href="#"><span class="star">*</span> Christian Hackenberg</a><br>
+		<a href="#"><span class="star">*</span> Geno Smith</a>  <a href="#"><span class="ir-icon"></span></a></td>
+   </tr>
+   <tr>
+		<td>OAK</td>
+		<td><a href="#"><span class="star">*</span> Derek Carr </a>  <a href="#"><span class="cold-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Matt McGloin</a></td>
+		<td><a href="#"><span class="star">*</span> Connor Cook</a></td>
+   </tr>
+      <tr>
+		<td>PIT</td>
+		<td><a href="#"><span class="star">*</span> Ben Roethlisberger</a>  <a href="#"><span class="news-icon"></span></a><a href="#"><span class="injury-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Landry Jones</a></td>
+		<td><a href="#"><span class="star">*</span> Zach Mettenberger</a>
+		</td>
+   </tr>
+
+   <tr>
+		<td>SD</td>
+		<td><a href="#"><span class="star">*</span> Philip Rivers</a>  <a href="#"><span class="hot-icon"></span></a><a href="#"><span class="play-icon"></span></a></td>
+		<td><a href="#"><span class="star">*</span> Kellen Clemens</a></td>
+		<td></td>
+   </tr>
+ 	
+   <tr>
+		<td>TEN</td>
+		<td><a href="#"><span class="star">*</span> Marcus Mariota</a></td>
+		<td><a href="#"><span class="star">*</span> Matt Cassel</a></td>
+		<td></td>
+   </tr>
+
+   </tbody>
+   </table>
+   </div>
+
+   
+   <div class="container">
+   <div class="text-center">
+   <p><span class="star">*</span>- denotes free agents.</p>
+   <p><span class="injury-icon"></span><span class="padd-l20">Injury</span>
+   <span class="news-icon"></span><span class="padd-l20">Player News</span>
+   <span class="hot-icon"></span><span class="padd-l20">Hot Player</span>
+   <span class="cold-icon"></span><span class="padd-l20">Cold Player</span></p>
+   </div>
+   </div>
+   
+   <div class="footer">
+   <div class="container">
+   <div class="text-center">
+   <div class="social">
+   <div>
+   <a href="#" class="fb-icon"></a>
+   <a href="#" class="tweet-icon"></a>
+   <a href="#" class="google-icon"></a>
+   <a href="#" class="youtupe-icon"></a>
+   <a href="#" class="instagram-icon"></a>
+   <a href="#" class="pintrest-icon"></a>
+   </div>
+   <p>© 2005-2016 CBS INTERACTIVE. ALL RIGHTS RESERVED.</p>
+   <p>CBS Sports is a registered trademark of CBS Broadcasting Inc.</p>
+
+   </div>
+   
+   
+   </div>
+   </div>
+   
+   </div>
+   
+   
+</body>
+</html>

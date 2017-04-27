@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>:- Fantasy Football :-</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/jquery.min.js"></script>
+<script src="js/maps.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){$().orion({speed:500,animation: "zoom"});});
+function show3() { 
+	<!--  alert("Hello! I am an alert box!!"); -->
+         if(document.getElementById('editlist1').style.display=='none') { 
+            document.getElementById('editlist1').style.display='block'; 
+			<!-- alert("Hello! I am an alert box!!2"); -->
+				
+		    } 
+        
+      else if(document.getElementById('editlist1').style.display=='block') { 
+	  <!-- alert("Hello! I am an alert box!!3"); -->
+	            document.getElementById('editlist1').style.display='none'; 
+			    } 
+    }
+</script>
+   
+  </head>
+  
+  <body>
+  <div class="header">
+  <div class="container">
+	<div class="text-center">
+	<div class="logo">
+		<img src="images/logo.png"/>
+	
+	</div>
+		<a href="#"><input type="text" placeholder="search players"/></a>
+		<div class="profile">
+		<div>
+			<img src="images/profile.jpg" /> 
+			<span class="name"> </span> 
+			<span style="display: inline-block;"> <a class="login" href="#" onmouseover="show3()"></a></span>
+			<span style="display: inline-block;"><a href="commissioner_tools.php" class="set-icon"></a></span>
+		</div>
+ <div class="edit-menu">
+   <ul id="editlist1" style="display:none;">
+      <li><a href="logout.php"><span class="logout"></span>Logout</a></li>        
+      <li><a href="#"><span class="account-set"></span>Account Settings</a></li>        
+          
+    </ul>
+	</div>
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="menu">
+  <div class="container">
+  <ul class="orion-menu green" style="padding:0px;margin: 0;list-style: none;">
+  <li><a href="#">League</a>
+   <ul>
+  <li><a href="#">Home</a></li>
+  </ul>
+  </li>
+  <li>
+  <a href="#">My Team</a>
+  <ul>
+  <li><a href="#">Roster</a></li>
+  <li><a href="#">Settings</a></li>
+  </ul>
+   </li>
+  <li><a href="#">Players</a>
+  <ul>
+  <li><a href="#">Stats</a></li>
+  <li><a href="#">INJURY REPORT</a></li>
+  <li><a href="#">DEPTH CHARTS</a></li>
+  </ul>
+  </li>
+  <li><a href="#">Scores</a>
+   <ul>
+  <li><a href="#">FANTASY GAMETRACKER</a></li>
+  <li><a href="#">NFL GAMES</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Standings</a>
+  <ul>
+  <li><a href="#">OVERALL</a></li>
+  <li><a href="#">BREAKDOWN</a></li>
+  <li><a href="#">POWER RANKING</a></li>
+  <li><a href="#">TOURNAMENTS</a></li>
+  <li><a href="#">PLAYOFF RACE</a></li>
+  <li><a href="#">COACK OF THE YEAR</a></li>
+   </ul> 
+  </li>
+  <li><a href="commissioner_tools.php">Commisoner</a></li>
+  </ul>
+  </div>
+  <div class="clear"></div>
+  </div>  <div class="banner"><img src="images/banner.jpg"></div>
+  <div class="container">
+  <div class="text-center contant">
+  <h1>Fantasy Wildcard Team Selection <br> <span>Todds Tough MOFOs<br>(3 - 6 - 0)</span></h1>
+  </div>
+  </div>
+ <!-- <div class="container">
+	<h1 class="title">Fantasy Wildcard Team Selection</h1>
+  </div>-->
+ <div class="container">
+<!-- <h1 class="title">Current Teams</h1>-->
+  	 
+<form name="team-div" id="team-div" method="post" onsubmit="return check_division();" style="width: 100%;float:left;">
+<input name="division_count" id="division_count" value="" type="hidden">
+<input name="hdaction" id="hdaction" value="" type="hidden">
+<div style="border: medium none; "> 
+		<div class="clear"></div>
+            </div>
+     
+<div class="team-selection-div"> 
+<div class="team-menu">
+         <a class="active" id="tabs0td" href="#QB" onclick="goTabtabs('tabs0');"><b>QB</b></a>
+         <a class="bg1" id="tabs1td" href="#RB" onclick="goTabtabs('tabs1')"><b>RB</b></a>        
+         <a class="bg1" id="tabs2td" href="#WR" onclick="goTabtabs('tabs2')"><b>WR</b></a>
+         <a class="bg1" id="tabs3td" href="#TE" onclick="goTabtabs('tabs3')"><b>TE</b></a>
+         <a class="bg1" id="tabs4td" href="#K" onclick="goTabtabs('tabs4')"><b>K</b></a>
+         <a class="bg1" id="tabs5td" href="#D" onclick="goTabtabs('tabs5')"><b>D</b></a>
+         <a class="bg1" id="tabs6td" href="#ST" onclick="goTabtabs('tabs6')"><b>ST</b></a>
+		 
+        </div>
+ <div class="active" style="width:100%; height:300px; border-left:0px; border-right:0px; border-bottom:0px;">
+<div id="tabs0" style="top: 0px; left: 0px; display: block; margin: 1px;">
+ <select multiple="" id="QB" name="QB[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player0(); " size="10">
+    <option value="0" selected="selected">select</option>
+    		<!--  -<option value="164">-->
+		<option value="164">
+		Agnew Ray - NEW YORK GIANTS QB</option>
+			<!--  -<option value="159">-->
+		<option value="159">
+		Bears - KANSAS CITY CHIEFS K</option>
+			<!--  -<option value="160">-->
+		<option value="160">
+		Bengals - ATLANTA FALCONS QB</option>
+			<!--  -<option value="169">-->
+		<option value="169">
+		Browns - HOUSTON TEXANS QB</option>
+			<!--  -<option value="168">-->
+		<option value="168">
+		Buccaneers - DENVER BRONCOS QB</option>
+			<!--  -<option value="167">-->
+		<option value="167">
+		Cardinals - WASHINGTON REDSKINS QB</option>
+			<!--  -<option value="173">-->
+		<option value="173">
+		Chargers - NEW ENGLAND PATRIOTS D</option>
+			<!--  -<option value="166">-->
+		<option value="166">
+		Chiefs - TAMPA BAY BUCCANEARS QB</option>
+			<!--  -<option value="172">-->
+		<option value="172">
+		Cowboys - MIAMI DOLPHINS K</option>
+			<!--  -<option value="165">-->
+		<option value="165">
+		Eagles - SEATTLE SEAHAWKS QB</option>
+			<!--  -<option value="171">-->
+		<option value="171">
+		Giants - MIAMI DOLPHINS K</option>
+			<!--  -<option value="163">-->
+		<option value="163">
+		MINNESOTA VIKINGS - GREEN BAY PACKERS QB</option>
+			<!--  -<option value="174">-->
+		<option value="174">
+		Panthers - OAKLAND RAIDERS D</option>
+			<!--  -<option value="170">-->
+		<option value="170">
+		Patriots - KANSAS CITY CHIEFS K</option>
+			<!--  -<option value="161">-->
+		<option value="161">
+		Ravens - DALLAS COWBOYS QB</option>
+			<!--  -<option value="175">-->
+		<option value="175">
+		Saints - PITTSBURGH STELERS D</option>
+			<!--  -<option value="176">-->
+		<option value="176">
+		Steelers - TENNESSEE TITANS ST</option>
+			<!--  -<option value="162">-->
+		<option value="162">
+		Texans - DETROIT LIONS QB</option>
+			<!--  -<option value="158">-->
+		<option value="158">
+		WAS - MINNESOTA VIKINGS QB</option>
+		</select>
+</div>
+<div id="tabs1" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="RB" name="RB[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player1(); " size="10">
+    <option value="0" selected="selected">select</option>
+    		<option value="21">
+		Adrian Peterson - MIN RB</option>
+			<option value="54">
+		Akeem Hunt - HOU RB</option>
+			<option value="28">
+		Alex Collins - SEA RB</option>
+			<option value="53">
+		Alfred Blue - HOU RB</option>
+			<option value="5">
+		Alfred Morris - DAL RB</option>
+			<option value="13">
+		Ameer Abdullah - DET RB</option>
+			<option value="36">
+		Antone Smith - TB RB</option>
+			<option value="81">
+		Antonio Andrews - TEN RB</option>
+			<option value="24">
+		Bobby Rainey - NYG RB</option>
+			<option value="70">
+		Brandon Bolden - NE RB</option>
+			<option value="51">
+		C.J. Anderson - DEN RB</option>
+			<option value="31">
+		C.J. Prosise - SEA RB</option>
+			<option value="37">
+		Charles Sims - TB RB</option>
+			<option value="58">
+		Chris Ivory - JAC RB</option>
+			<option value="39">
+		Chris Thompson - WAS RB</option>
+			<option value="15">
+		Christine Michael - GB RB</option>
+			<option value="60">
+		Corey Grant - JAC RB</option>
+			<option value="65">
+		Damien Williams - MIA RB</option>
+			<option value="7">
+		Darius Jackson - DAL RB</option>
+			<option value="78">
+		Daryl Richardson - PIT RB</option>
+			<option value="82">
+		David Fluellen - TEN RB</option>
+			<option value="72">
+		DeAndre Washington - OAK RB</option>
+			<option value="77">
+		DeAngelo Williams - PIT RB</option>
+			<option value="79">
+		DeMarco Murray - TEN RB</option>
+			<option value="59">
+		Denard Robinson - JAC RB</option>
+			<option value="80">
+		Derrick Henry - TEN RB</option>
+			<option value="1">
+		Devonta Freeman - ATL RB</option>
+			<option value="48">
+		Devontae Booker - DEN RB</option>
+			<option value="69">
+		Dion Lewis - NE RB</option>
+			<option value="18">
+		Don Jackson - GB RB</option>
+			<option value="33">
+		Doug Martin - TB RB</option>
+			<option value="9">
+		Dwayne Washington - DET RB</option>
+			<option value="16">
+		Eddie Lacy - GB RB</option>
+			<option value="4">
+		Ezekiel Elliott - DAL RB</option>
+			<option value="76">
+		Fitzgerald Toussaint - PIT RB</option>
+			<option value="30">
+		George Farmer - SEA RB</option>
+			<option value="34">
+		Jacquizz Rodgers - TB RB</option>
+			<option value="73">
+		Jalen Richard - OAK RB</option>
+			<option value="63">
+		Jamaal Charles - KC RB</option>
+			<option value="14">
+		James Starks - GB RB</option>
+			<option value="68">
+		James White - NE RB</option>
+			<option value="46">
+		Javorius Allen - BAL RB</option>
+			<option value="64">
+		Jay Ajayi - MIA RB</option>
+			<option value="19">
+		Jerick McKinnon - MIN RB</option>
+			<option value="17">
+		John Crockett - GB RB</option>
+			<option value="56">
+		Jonathan Grimes - HOU RB</option>
+			<option value="11">
+		Justin Forsett - DET RB</option>
+			<option value="50">
+		Juwan Thompson - DEN RB</option>
+			<option value="49">
+		Kapri Bibbs - DEN RB</option>
+			<option value="43">
+		Keith Marshall - WAS RB</option>
+			<option value="45">
+		Kenneth Dixon - BAL RB</option>
+			<option value="66">
+		Kenyan Drake - MIA RB</option>
+			<option value="62">
+		Knile Davis - KC RB</option>
+			<option value="52">
+		Lamar Miller - HOU RB</option>
+			<option value="6">
+		Lance Dunbar - DAL RB</option>
+			<option value="71">
+		Latavius Murray - OAK RB</option>
+			<option value="75">
+		Le'Veon Bell - PIT RB</option>
+			<option value="67">
+		LeGarrette Blount - NE RB</option>
+			<option value="47">
+		Lorenzo Taliaferro - BAL RB</option>
+			<option value="41">
+		Mack Brown - WAS RB</option>
+			<option value="20">
+		Matt Asiata - MIN RB</option>
+			<option value="40">
+		Matt Jones - WAS RB</option>
+			<option value="12">
+		Michael Burton - DET RB</option>
+			<option value="26">
+		Orleans Darkwa - NYG RB</option>
+			<option value="23">
+		Paul Perkins - NYG RB</option>
+			<option value="35">
+		Peyton Barber - TB RB</option>
+			<option value="22">
+		Rashad Jennings - NYG RB</option>
+			<option value="38">
+		Rob Kelley - WAS RB</option>
+			<option value="25">
+		Shane Vereen - NYG RB</option>
+			<option value="42">
+		Silas Redd - WAS RB</option>
+			<option value="61">
+		Spencer Ware - KC RB</option>
+			<option value="57">
+		T.J. Yeldon - JAC RB</option>
+			<option value="74">
+		Taiwan Jones - OAK RB</option>
+			<option value="44">
+		Terrance West - BAL RB</option>
+			<option value="3">
+		Terron Ward - ATL RB</option>
+			<option value="2">
+		Tevin Coleman - ATL RB</option>
+			<option value="8">
+		Theo Riddick - DET RB</option>
+			<option value="27">
+		Thomas Rawls - SEA RB</option>
+			<option value="32">
+		Tre Madden - SEA RB</option>
+			<option value="29">
+		Troymaine Pope - SEA RB</option>
+			<option value="55">
+		Tyler Ervin - HOU RB</option>
+			<option value="10">
+		Zach Zenner - DET RB</option>
+	</select></div>
+<div id="tabs2" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="WR" name="WR[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player2(); " size="10">
+    <option value="0" selected="selected">select</option>
+    		<option value="147">
+		Adam Thielen - MIN WR</option>
+			<option value="142">
+		Anquan Boldin - DET WR</option>
+			<option value="156">
+		Cecil Shorts - TB WR</option>
+			<option value="139">
+		Cole Beasley - DAL WR</option>
+			<option value="148">
+		Cordarrelle Patterson - MIN WR</option>
+			<option value="145">
+		Davante Adams - GB WR</option>
+			<option value="157">
+		Dennis Pitta - BAL WR</option>
+			<option value="137">
+		Dez Bryant - DAL WR</option>
+			<option value="152">
+		Doug Baldwin - SEA WR</option>
+			<option value="140">
+		Golden Tate - DET WR</option>
+			<option value="153">
+		Jermaine Kearse - NYG WR</option>
+			<option value="143">
+		Jordy Nelson - GB WR</option>
+			<option value="134">
+		Julio Jones - ATL WR</option>
+			<option value="136">
+		Justin Hardy - ATL WR</option>
+			<option value="141">
+		Marvin Jones - DET WR</option>
+			<option value="155">
+		Mike Evans - TB WR</option>
+			<option value="135">
+		Mohamed Sanu - ATL WR</option>
+			<option value="149">
+		Odell Beckham - NYG WR</option>
+			<option value="144">
+		Randall Cobb - GB WR</option>
+			<option value="129">
+		Rob Gronkowski - MIN WR</option>
+			<option value="146">
+		Stefon Diggs - MIN WR</option>
+			<option value="150">
+		Sterling Shepard - NYG WR</option>
+			<option value="138">
+		Terrance Williams - DAL WR</option>
+			<option value="154">
+		Tyler Lockett - SEA WR</option>
+			<option value="151">
+		Victor Cruz - NYG WR</option>
+	    
+    </select></div><div id="tabs3" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="TE" name="TE[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player3(); " size="10">
+     <option value="0" selected="selected">select</option>
+      		<option value="83">
+		Austin Hooper - ATL TE</option>
+			<option value="111">
+		Brandon Cottom - SEA TE</option>
+			<option value="116">
+		Brandon Myers - TB TE</option>
+			<option value="94">
+		Brandon Pettigrew - DET TE</option>
+			<option value="109">
+		Brandon Williams - SEA TE</option>
+			<option value="126">
+		C.J. Fiedorowicz - HOU TE</option>
+			<option value="114">
+		Cameron Brate - TB TE</option>
+			<option value="92">
+		Clay Harbor - DET TE</option>
+			<option value="130">
+		Clive Walford - OAK TE</option>
+			<option value="96">
+		Cole Wick - DET TE</option>
+			<option value="121">
+		Crockett Gillmore - BAL TE</option>
+			<option value="122">
+		Darren Waller - BAL TE</option>
+			<option value="101">
+		David Morgan - MIN TE</option>
+			<option value="133">
+		Delanie Walker - TEN TE</option>
+			<option value="119">
+		Derek Carrier - WAS TE</option>
+			<option value="128">
+		Dion Sims - MIA TE</option>
+			<option value="91">
+		Eric Ebron - DET TE</option>
+			<option value="88">
+		Gavin Escobar - DAL TE</option>
+			<option value="90">
+		Geoff Swaim - DAL TE</option>
+			<option value="86">
+		Jacob Tamme - ATL TE</option>
+			<option value="89">
+		James Hanna - DAL TE</option>
+			<option value="97">
+		Jared Cook - GB TE</option>
+			<option value="87">
+		Jason Witten - DAL TE</option>
+			<option value="125">
+		Jeff Heuerman - DEN TE</option>
+			<option value="104">
+		Jerell Adams - NYG TE</option>
+			<option value="107">
+		Jimmy Graham - SEA TE</option>
+			<option value="113">
+		Joe Sommers - SEA TE</option>
+			<option value="117">
+		Jordan Reed - WAS TE</option>
+			<option value="85">
+		Josh Perkins - ATL TE</option>
+			<option value="99">
+		Kyle Rudolph - MIN TE</option>
+			<option value="132">
+		Ladarius Green - PIT TE</option>
+			<option value="102">
+		Larry Donnell - NYG TE</option>
+			<option value="84">
+		Levine Toilolo - ATL TE</option>
+			<option value="115">
+		Luke Stocker - TB TE</option>
+			<option value="108">
+		Luke Willson - SEA TE</option>
+			<option value="106">
+		Matt LaCosse - NYG TE</option>
+			<option value="93">
+		Matthew Mulligan - DET TE</option>
+			<option value="131">
+		Mychal Rivera - OAK TE</option>
+			<option value="123">
+		Nick Boyle - BAL TE</option>
+			<option value="110">
+		Nick Vannett - SEA TE</option>
+			<option value="120">
+		Niles Paul - WAS TE</option>
+			<option value="100">
+		Rhett Ellison - MIN TE</option>
+			<option value="98">
+		Richard Rodgers - GB TE</option>
+			<option value="112">
+		Ronnie Shields - SEA TE</option>
+			<option value="95">
+		Timothy Wright - DET TE</option>
+			<option value="127">
+		Travis Kelce - KC TE</option>
+			<option value="118">
+		Vernon Davis - WAS TE</option>
+			<option value="124">
+		Virgil Green - DEN TE</option>
+			<option value="105">
+		Will Johnson - NYG TE</option>
+			<option value="103">
+		Will Tye - NYG TE</option>
+		
+    </select></div><div id="tabs4" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="K" name="K[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player4(); " size="10">
+     <option value="0" selected="selected">select</option>
+    		<option value="164">
+		Agnew Ray - NEW YORK GIANTS QB</option>
+			<option value="159">
+		Bears - KANSAS CITY CHIEFS K</option>
+			<option value="160">
+		Bengals - ATLANTA FALCONS QB</option>
+			<option value="169">
+		Browns - HOUSTON TEXANS QB</option>
+			<option value="168">
+		Buccaneers - DENVER BRONCOS QB</option>
+			<option value="167">
+		Cardinals - WASHINGTON REDSKINS QB</option>
+			<option value="173">
+		Chargers - NEW ENGLAND PATRIOTS D</option>
+			<option value="166">
+		Chiefs - TAMPA BAY BUCCANEARS QB</option>
+			<option value="172">
+		Cowboys - MIAMI DOLPHINS K</option>
+			<option value="165">
+		Eagles - SEATTLE SEAHAWKS QB</option>
+			<option value="171">
+		Giants - MIAMI DOLPHINS K</option>
+			<option value="163">
+		MINNESOTA VIKINGS - GREEN BAY PACKERS QB</option>
+			<option value="174">
+		Panthers - OAKLAND RAIDERS D</option>
+			<option value="170">
+		Patriots - KANSAS CITY CHIEFS K</option>
+			<option value="161">
+		Ravens - DALLAS COWBOYS QB</option>
+			<option value="175">
+		Saints - PITTSBURGH STELERS D</option>
+			<option value="176">
+		Steelers - TENNESSEE TITANS ST</option>
+			<option value="162">
+		Texans - DETROIT LIONS QB</option>
+			<option value="158">
+		WAS - MINNESOTA VIKINGS QB</option>
+	</select></div><div id="tabs5" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="D" name="D[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;
+    width: 100%;" onchange="add_player5(); " size="10">
+       <option value="0" selected="selected">select</option>
+
+ 		<option value="164">
+		Agnew Ray - NEW YORK GIANTS QB</option>
+			<option value="159">
+		Bears - KANSAS CITY CHIEFS K</option>
+			<option value="160">
+		Bengals - ATLANTA FALCONS QB</option>
+			<option value="169">
+		Browns - HOUSTON TEXANS QB</option>
+			<option value="168">
+		Buccaneers - DENVER BRONCOS QB</option>
+			<option value="167">
+		Cardinals - WASHINGTON REDSKINS QB</option>
+			<option value="173">
+		Chargers - NEW ENGLAND PATRIOTS D</option>
+			<option value="166">
+		Chiefs - TAMPA BAY BUCCANEARS QB</option>
+			<option value="172">
+		Cowboys - MIAMI DOLPHINS K</option>
+			<option value="165">
+		Eagles - SEATTLE SEAHAWKS QB</option>
+			<option value="171">
+		Giants - MIAMI DOLPHINS K</option>
+			<option value="163">
+		MINNESOTA VIKINGS - GREEN BAY PACKERS QB</option>
+			<option value="174">
+		Panthers - OAKLAND RAIDERS D</option>
+			<option value="170">
+		Patriots - KANSAS CITY CHIEFS K</option>
+			<option value="161">
+		Ravens - DALLAS COWBOYS QB</option>
+			<option value="175">
+		Saints - PITTSBURGH STELERS D</option>
+			<option value="176">
+		Steelers - TENNESSEE TITANS ST</option>
+			<option value="162">
+		Texans - DETROIT LIONS QB</option>
+			<option value="158">
+		WAS - MINNESOTA VIKINGS QB</option>
+	</select></div>
+<div id="tabs6" style="top: 0px; left: 0px; display: none; margin: 1px;">
+<select multiple="" id="ST" name="ST[]" style="font-family: arial, helvetica, sans-serif; font-size: 13px;
+    height: 300px;  width: 100%;" onchange="add_player6(); " size="10">
+   <option value="0" selected="selected"> select</option>
+
+ 		<option value="164">
+		Agnew Ray - NEW YORK GIANTS QB</option>
+			<option value="159">
+		Bears - KANSAS CITY CHIEFS K</option>
+			<option value="160">
+		Bengals - ATLANTA FALCONS QB</option>
+			<option value="169">
+		Browns - HOUSTON TEXANS QB</option>
+			<option value="168">
+		Buccaneers - DENVER BRONCOS QB</option>
+			<option value="167">
+		Cardinals - WASHINGTON REDSKINS QB</option>
+			<option value="173">
+		Chargers - NEW ENGLAND PATRIOTS D</option>
+			<option value="166">
+		Chiefs - TAMPA BAY BUCCANEARS QB</option>
+			<option value="172">
+		Cowboys - MIAMI DOLPHINS K</option>
+			<option value="165">
+		Eagles - SEATTLE SEAHAWKS QB</option>
+			<option value="171">
+		Giants - MIAMI DOLPHINS K</option>
+			<option value="163">
+		MINNESOTA VIKINGS - GREEN BAY PACKERS QB</option>
+			<option value="174">
+		Panthers - OAKLAND RAIDERS D</option>
+			<option value="170">
+		Patriots - KANSAS CITY CHIEFS K</option>
+			<option value="161">
+		Ravens - DALLAS COWBOYS QB</option>
+			<option value="175">
+		Saints - PITTSBURGH STELERS D</option>
+			<option value="176">
+		Steelers - TENNESSEE TITANS ST</option>
+			<option value="162">
+		Texans - DETROIT LIONS QB</option>
+			<option value="158">
+		WAS - MINNESOTA VIKINGS QB</option>
+	
+</select></div>
+            </div>
+
+<input type="hidden" name="wildcard_team" id="wildcard_team" value="">
+ 
+ <div class="clear"></div>
+ </div>
+ 
+ <div class="team-contant-div">
+ <p class="ali-ri" style="color: #5a5a5a;"><span>*</span> Select 1QB, 2RB, 2WR, 1TE, 1K, 1DEF and 1 ST</p>
+ <div class="table-div1 new-table">
+<div class="table-maindiv">
+<div class="table-subdiv"  id="team_choosed">
+<!-- <div class="table-head width1"><h3>Position</h3></div> -->
+<div class="table-head"><h3>POS</h3></div>
+<div class="table-head"><h3>Name</h3></div>
+<div class="table-head"><h3>Team</h3></div>
+<div class="clear"></div>
+</div>
+<div id="static_team" style="display: block;">
+<div class="table-subdiv" style="text-align:center">
+  <div class="" style="text-align:center; float: left;font-size: 15px;font-weight: normal;padding: 10px 0;width: 100%;">
+  <p style="font-size:14px;color:black;font-weight:bold;"> No Records found</p></div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed0" style="display: none;">
+<div class="table-subdiv" >
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed1" style="display: none;">
+<div class="table-subdiv">
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed2" style="display: none;">
+<div class="table-subdiv" >
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed3" style="display: none;">
+<div class="table-subdiv" >
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed4" style="display: none;">
+<div class="table-subdiv"  >
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed5" style="display: none;">
+<div class="table-subdiv"  >
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="team_choosed6" style="display: none;">
+<div class="table-subdiv" >
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p></div>
+<div class="table-contant"><p></p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="btn-div">
+	 <input class="add-team-btn" value="Submit Team" type="submit" onclick="return check_division();">
+     <div class="clear"></div>
+     </div>
+</div>
+
+</form>
+ </div>
+ 
+ <style>
+ /* add/drap team */  
+
+/*.team-menu{padding: 0px;margin: 0px;width:100%;margin-bottom: 20px;display:inline-block;}
+.team-menu  a{background: #de3d3d;color: #fff;display: inline-block;float: left;padding: 5px 10px;}
+.team-menu  a:first-child{border-radius: 5px 0px 0px 5px;}
+.team-menu  a:last-child{border-radius: 0px 5px 5px 0px;}*/
+ 
+ </style>
+ <script>
+ function check_division()
+ {
+ 	var QB=document.getElementById('QB').value;
+ 	var RB=document.getElementById('RB').value;
+ 	var WR=document.getElementById('WR').value;
+ 	var TE=document.getElementById('TE').value;
+ 	var K=document.getElementById('K').value;
+ 	var D=document.getElementById('D').value;
+ 	var ST=document.getElementById('ST').value;
+	
+ 	if(QB=='0' && RB=='0' && WR=='0' && TE=='0' && K=='0' && D=='0' && ST=='0'  ){
+ 	 	alert('please choose players');
+ 		return false;
+ 	}
+ 	else if(QB=='' && RB==''  && WR=='' && TE=='' && K=='' && D=='' && ST==''  ){
+ 	 	alert('please choose players');
+ 		return false;
+ 	}
+	
+ 	else
+ 	{
+ 	$('#hdaction').val('1');
+ 	}
+ }
+
+$(document).ready(function () {
+	 $('#QB').change(function(event) {
+	        if ($(this).val().length > 1) {
+	          alert('You can only choose 1!');
+	          $(this).val(last_valid_selection);
+	          add_player0();
+	        } else {
+		         
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#RB').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	          add_player1();
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#WR').change(function(event) {
+	        if ($(this).val().length > 2) {
+	          alert('You can only choose 2!');
+	          $(this).val(last_valid_selection);
+	          add_player2();
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#TE').change(function(event) {
+	        if ($(this).val().length > 1) {
+	          alert('You can only choose 1!');
+	          $(this).val(last_valid_selection);
+	          add_player3();
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#K').change(function(event) {
+	        if ($(this).val().length > 1) {
+	          alert('You can only choose 1!');
+	          $(this).val(last_valid_selection);
+	          add_player4();
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#D').change(function(event) {
+	        if ($(this).val().length > 1) {
+	          alert('You can only choose 1!');
+	          $(this).val(last_valid_selection);
+	          add_player5();
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+	 $('#ST').change(function(event) {
+	        if ($(this).val().length > 1) {
+	          alert('You can only choose 1!');
+	          $(this).val(last_valid_selection);
+	          add_player6();
+	        } else {
+	          last_valid_selection = $(this).val();
+	        }
+	      });
+
+	document.getElementById("tabs0").style.display = "block";
+});
+
+function add_player0()
+{
+	//alert('');
+$("#team_choosed0").empty();
+	 var team_choosed0 = document.getElementById("team_choosed0");
+	 document.getElementById("team_choosed0").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	 var wildcard_team = document.getElementById("wildcard_team").value;
+	var j=0;
+	$('#QB :selected').each(function(i, sel){ 
+	 var str=$(sel).text();
+	 var player_Id=$(sel).val();
+	 var res = str.split("-");
+	document.getElementById("team_choosed0");
+
+	$.ajax({
+		url: 'getTeamColor.php',
+		type: "POST",
+		data:"Id="+player_Id,
+		success: function(data) {
+		//alert(data)
+		//alert('data:'+data)
+		if(data != '')
+		{
+			var data='<div class="table-subdiv" style="color:white;background-color:'+data+';"><div class="table-contant"><p>QB</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+
+			$(team_choosed0).append(data);	
+		}
+		else
+		{
+			var data='<div class="table-subdiv" style="background-color:#efefef;"><div class="table-contant"><p>QB</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+
+			$(team_choosed0).append(data);	
+		}
+		
+		//var color= data;
+		}
+	});
+	//alert('Color:'+color);
+	//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>QB</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+	/*var data='<div class="table-subdiv" style="background-color:#efefef;"><div class="table-contant"><p>QB</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+
+	$(team_choosed0).append(data);*/
+	
+   
+	});
+ 
+}
+
+function add_player1()
+{
+
+	$("#team_choosed1").empty();
+	 var team_choosed1 = document.getElementById("team_choosed1");
+	 document.getElementById("team_choosed1").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	var wildcard_team = document.getElementById("wildcard_team").value;
+	//alert('');
+	$('#RB :selected').each(function(i, sel){ 
+		
+	 var str=$(sel).text();
+	 var res = str.split("-");
+	document.getElementById("team_choosed1");
+	//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>RB</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+	var data='<div class="table-subdiv" ><div class="table-contant"><p>RB</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+
+	$(team_choosed1).append(data);
+	});
+	
+}
+function add_player2()
+{
+	$("#team_choosed2").empty();
+	 var team_choosed2 = document.getElementById("team_choosed2");
+	 document.getElementById("team_choosed2").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	 var wildcard_team = document.getElementById("wildcard_team").value;
+	$('#WR :selected').each(function(i, sel){ 
+		
+		 var str=$(sel).text();
+		 var res = str.split("-");
+		document.getElementById("team_choosed2");
+		var data='<div class="table-subdiv"><div class="table-contant"><p>WR</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+
+		//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>WR</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+	    $(team_choosed2).append(data);
+	});
+	
+}
+function add_player3()
+{
+	$("#team_choosed3").empty();
+	 var team_choosed3 = document.getElementById("team_choosed3");
+	 document.getElementById("team_choosed3").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	var wildcard_team = document.getElementById("wildcard_team").value;
+	$('#TE :selected').each(function(i, sel){ 
+		
+		 var str=$(sel).text();
+		 var res = str.split("-");
+		document.getElementById("team_choosed3");
+	    //document.getElementById("selected_team0").innerHTML += $(sel).text()+'</br>';width:200px
+	    var data='<div class="table-subdiv" ><div class="table-contant"><p>TE</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+	    
+		//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>TE</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+		//alert(data);
+	    $(team_choosed3).append(data);
+	});
+	
+}
+function add_player4()
+{
+	$("#team_choosed4").empty();
+	 var team_choosed4 = document.getElementById("team_choosed4");
+	 document.getElementById("team_choosed4").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	var wildcard_team = document.getElementById("wildcard_team").value;
+	$('#K :selected').each(function(i, sel){ 
+		
+		 var str=$(sel).text();
+		 var res = str.split("-");
+		document.getElementById("team_choosed4");
+			var data='<div class="table-subdiv" style="background-color:#efefef;"><div class="table-contant"><p>K</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+		
+		//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>K</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+	    $(team_choosed4).append(data);
+	});
+	
+}
+function add_player5()
+{
+	$("#team_choosed5").empty();
+	 var team_choosed5 = document.getElementById("team_choosed5");
+	 document.getElementById("team_choosed5").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	var wildcard_team = document.getElementById("wildcard_team").value;
+	//alert('');
+	$('#D :selected').each(function(i, sel){ 
+		 
+		 var str=$(sel).text();
+		 var res = str.split("-");
+		document.getElementById("team_choosed5");
+	    //document.getElementById("selected_team0").innerHTML += $(sel).text()+'</br>';
+	    var data='<div class="table-subdiv" ><div class="table-contant"><p>D</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+	    
+		//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>D</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+		//alert(data);
+	    $(team_choosed5).append(data);
+	});
+	
+}
+function add_player6()
+{
+	$("#team_choosed6").empty();
+	 var team_choosed6 = document.getElementById("team_choosed6");
+		
+	 document.getElementById("team_choosed6").style.display = "block";
+	 document.getElementById("static_team").style.display = "none";
+	 var wildcard_team = document.getElementById("wildcard_team").value;
+	//alert('');
+	$('#ST :selected').each(function(i, sel){ 
+		
+		 var str=$(sel).text();
+		 var res = str.split("-");
+		document.getElementById("team_choosed6");
+	    //document.getElementById("selected_team0").innerHTML += $(sel).text()+'</br>';
+	    var data='<div class="table-subdiv" style="background-color:#efefef;"><div class="table-contant"><p>ST</p></div><div class="table-contant"><p>'+res[0]+'</p></div><div class="table-contant"><p>'+res[1]+'</p></div><div class="clear"></div></div>';
+	    
+		//var data="<tr  id='sel_team'><td style='text-align:left;width:200px;'>ST</td><td style='text-align:left;width:200px;'>"+res[0]+"</td><td style='text-align:left;width:200px;'>"+res[1]+"</td></tr>";
+		//alert(data);
+	    $(team_choosed6).append(data);
+	});
+	
+}
+
+
+function goTabtabs(val) {
+	//alert('');
+	
+    if (val == "tabs0") {
+       
+		document.getElementById("tabs0").style.display = "block";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs1") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "block";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs2") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "block";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs3") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "block";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs4") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "block";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs5") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "block";
+		document.getElementById("tabs6").style.display = "none";
+			
+    } 
+    if (val == "tabs6") {
+       
+		document.getElementById("tabs0").style.display = "none";
+		document.getElementById("tabs1").style.display = "none";
+		document.getElementById("tabs2").style.display = "none";
+		document.getElementById("tabs3").style.display = "none";
+		document.getElementById("tabs4").style.display = "none";
+		document.getElementById("tabs5").style.display = "none";
+		document.getElementById("tabs6").style.display = "block";
+			
+    } 
+   
+	
+}
+/*var elems = [];
+elems.push['1'];
+elems.push['2'];
+elems.push['3']; 
+
+var fd = new FormData(document.getElementById("myform"));
+for (var i = 0; i < elems.length; i++) {
+   fd.append('elems[]', elems[i]);
+}*/
+</script>
+<script>
+  $('.team-menu > a').on('click', function() {
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+  });    
+</script>
+  
+    
+   <div class="footer">
+   <div class="container">
+   <div class="text-center">
+   <div class="social">
+   <div>
+   <a href="#" class="fb-icon"></a>
+   <a href="#" class="tweet-icon"></a>
+   <a href="#" class="google-icon"></a>
+   <a href="#" class="youtupe-icon"></a>
+   <a href="#" class="instagram-icon"></a>
+   <a href="#" class="pintrest-icon"></a>
+   </div>
+   <p>© 2005-2016 CBS INTERACTIVE. ALL RIGHTS RESERVED.</p>
+   <p>CBS Sports is a registered trademark of CBS Broadcasting Inc.</p>
+
+   </div>
+   
+   
+   </div>
+   </div>
+   
+   </div>
+   </body>
+</html>

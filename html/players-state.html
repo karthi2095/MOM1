@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>:- Fantasy Football :-</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  
+  <body>
+  <div class="header">
+  <div class="container">
+	<div class="text-center">
+	<div class="logo">
+		<img src="images/logo.png"/>
+	
+	</div>
+		<a href="#"><input type="text" placeholder="search players"/></a>
+		<div class="profile">
+		<div>
+			<img src="images/profile.jpg" /> 
+			<span class="name">Todd Birk </span> 
+			<span style="display: inline-block;"> <a class="login" href="#" onmouseover="show3()"></a></span>
+			<span style="display: inline-block;"><a href="#" class="set-icon"></a></span>
+		</div>
+ <div class="edit-menu">
+   <ul id="editlist1" style="display:none;">
+      <li><a href="#"><span class="logout"></span>Logout</a></li>        
+      <li><a href="#"><span class="account-set"></span>Account Settings</a></li>        
+          
+    </ul>
+	</div>
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="menu">
+  <div class="container">
+  <ul class="orion-menu green" style="padding:0px;margin: 0;list-style: none;">
+  <li><a href="#">Leauge</a>
+   <ul>
+  <li><a href="#">Home</a></li>
+  </ul>
+  </li>
+  <li>
+  <a href="#">My Team</a>
+  <ul>
+  <li><a href="#">Roster</a></li>
+  <li><a href="#">Settings</a></li>
+  </ul>
+   </li>
+  <li><a href="#">Players</a>
+  <ul>
+  <li><a href="#">Stats</a></li>
+  <li><a href="#">INJURY REPORT</a></li>
+  <li><a href="#">DEPTH CHARTS</a></li>
+  </ul>
+  </li>
+  <li><a href="#">Scores</a>
+   <ul>
+  <li><a href="#">FANTASY GAMETRACKER</a></li>
+  <li><a href="#">NFL GAMES</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Standings</a>
+  <ul>
+  <li><a href="#">OVERALL</a></li>
+  <li><a href="#">BREAKDOWN</a></li>
+  <li><a href="#">POWER RANKING</a></li>
+  <li><a href="#">TOURNAMENTS</a></li>
+  <li><a href="#">PLAYOFF RACE</a></li>
+  <li><a href="#">COACK OF THE YEAR</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Commisoner</a></li>
+  </ul>
+  </div>
+  <div class="clear"></div>
+  </div>
+  <div class="banner"><img src="images/banner.jpg"></div>
+  
+  <div class="container">
+  <div class="text-center contant">
+  <h1>Green Bay Packers <br> <span>(1 - 1 - 0)</span></h1>
+  <h1><span>Player Stats</span></h1>
+  </div>
+  </div>
+  
+  <div class="container">
+  <div class="sub-head-div">
+  
+  <div class="left-div">
+  <h4 class="title">Positions:</h4>
+  <div class="position-div">
+  <a href="#">TQB</a>
+  <a href="#">RB</a>
+  <a href="#">WR</a>
+  <a href="#">TE</a>
+  <a href="#">K</a>
+  <a href="#">D</a>
+  <a href="#">ST</a>
+ <a href="#">RB/WR/TE</a>
+ <div class="clear"></div>
+ </div>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="right-div">
+  <h4 class="title">Player Status:</h4>
+  <div class="player-status">
+  <a href="#">Free Agents</a>
+  <a href="#">All Players</a>
+  <a href="#">Scout Team</a>
+   <select>
+   <option>Fantasy Team</option>
+   <option>Atlanta Falcons</option>
+   <option>Dallas Cowboys</option>
+   <option>Dallas Cowboys</option>
+   <option>Detroit Lions</option>
+   <option>Green Bay Packers</option>
+   <option>Houston Texans</option>
+   <option>Kansas City Chiefs</option>
+   <option>Miami Dolphins</option>
+  </select>
+  <div style="display:inline-block;">
+  <input type="checkbox" value="Show My Team"/>
+  Show My Team
+  </div>
+  <div class="clear"></div>
+  </div>
+  </div>
+   
+   <!-- <div style="width:35%;float:right;">
+  <h4>My Reports:</h4>
+  <div class="report-div">
+	<select>
+   <option>Recently Viewed Reports</option>
+   <option>Atlanta Falcons</option>
+   <option>Dallas Cowboys</option>
+   <option>Dallas Cowboys</option>
+   <option>Detroit Lions</option>
+   <option>Green Bay Packers</option>
+   <option>Houston Texans</option>
+   <option>Kansas City Chiefs</option>
+   <option>Miami Dolphins</option>
+  </select>
+  
+  <select>
+   <option>My Saved Reports</option>
+   <option>Atlanta Falcons</option>
+   <option>Dallas Cowboys</option>
+   <option>Dallas Cowboys</option>
+   <option>Detroit Lions</option>
+   <option>Green Bay Packers</option>
+   <option>Houston Texans</option>
+   <option>Kansas City Chiefs</option>
+   <option>Miami Dolphins</option>
+  </select>
+  <div class="clear"></div>
+  </div>
+   <div class="clear"></div>
+  </div> -->
+  
+  
+  <div class="clear"></div>
+  </div>
+  
+  
+  <div class="clear"></div>
+  </div>
+  
+<!-- <div class="container">
+<div class="sub-head-div">
+  <div class="report-div">
+  <div style="display:inline-block;float:left;margin-right:15px;">
+  <p>Timeframe:</p>
+	<select>
+   <option>Recently Viewed Reports</option>
+   <option>Atlanta Falcons</option>
+   <option>Dallas Cowboys</option>
+   <option>Dallas Cowboys</option>
+   <option>Detroit Lions</option>
+   <option>Green Bay Packers</option>
+   <option>Houston Texans</option>
+   <option>Kansas City Chiefs</option>
+   <option>Miami Dolphins</option>
+  </select>
+  </div>
+  <div  style="display:inline-block;float:left;margin-right:15px;">
+  <p>Categories:</p>
+  <select>
+   <option>Standard</option>
+   <option>Scoring</option>
+   <option>Advanced</option>
+    </select>
+  </div>
+
+  <div class="clear"></div>
+  
+  <p style="margin: 5px 0px;">Free Agents CBS Average Projections Standard Stats</p>
+  </div>
+<div class="clear"></div>
+</div>
+
+  </div> -->
+ 
+  
+  <div class="container">
+  <div class="search-div" style="float:right;margin-bottom:15px;">
+  <input placeholder="search players" type="text">
+  </div>
+  
+  <div class="palayer-state">
+  <table>
+  <tbody>
+  <tr class="head">
+  <th colspan="2"> </th>
+  <th colspan="2"><div class="bor1">Upcoming</div></th>
+  <th colspan="5"><div class="bor1">Passing</div></th>
+  <th colspan="4"><div class="bor1">Rushing</div></th>
+  <th colspan="5"><div class="bor1">Receiving</div></th>
+   <th colspan="2"> </th>
+  </tr>
+  <tr class="head">
+  <!-- <td>Action</td> -->
+  <td>Avail</td>
+  <td>Player</td>
+  <td>Opp</td>
+  <td>Bye</td>
+  <td>Att</td>
+  <td>Cmp</td>
+  <td>Yd</td>
+  <td>TD</td>
+  <td>Int</td>
+  <td>Att</td>
+  <td>Yd</td>
+  <td>Avg</td>
+  <td>TD</td>
+  <td>Tar</td>
+  <td>Recpt</td>
+  <td>Yd</td>
+  <td>Avg</td>
+  <td>TD</td>
+  <td>FL</td>
+  <td>FPTS</td>
+  </tr>
+  <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>Aldrick Robinson WR | ATL</td> 
+  <td>GB</td>
+  <td>11,18</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>2.7</td>	
+  <td>1.8</td>	
+  <td>27.4</td>	
+  <td>15.2</td>
+  <td>0.2</td>	
+  <td>0.0</td>	
+  <td>0.80</td>
+  </tr>
+
+   <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>Nick Williams WR | ATL/td> 
+  <td>GB</td>
+  <td>11,18</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.7</td>	
+  <td>0.5</td>	
+  <td>6.6</td>	
+  <td>13.2</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.15</td>
+  </tr>
+ 
+   <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>James Starks RB | GB</td> 
+  <td>@ATL</td>
+  <td>4</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.6</td>
+  <td>2.3</td>	
+  <td>3.8</td>	
+  <td>0.0</td>	
+  <td>0.2</td>	
+  <td>0.2</td>	
+  <td>1.3</td>	
+  <td>6.5</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.08</td>
+  </tr>
+
+  <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>Trevor Davis WR | GB</td> 
+  <td>@ATL</td>
+  <td>4</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.1</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.5</td>	
+  <td>0.3</td>	
+  <td>3.5</td>	
+  <td>11.7</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.08</td>
+  </tr>
+
+  <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>Terron Ward RB | ATL</td> 
+  <td>GB</td>
+  <td>11,18</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.8</td>
+  <td>3.7</td>	
+  <td>4.6</td>	
+  <td>0.0</td>	
+  <td>0.1</td>	
+  <td>0.1</td>	
+  <td>0.6</td>	
+  <td>6.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.08</td>
+  </tr>	
+
+  <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>James Develin RB | NE</td> 
+  <td>PIT</td>
+  <td>9,18</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.1</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.2665</td>	
+  <td>0.2</td>	
+  <td>1.5</td>	
+  <td>7.5</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.03</td>
+  </tr>	
+  <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>Patrick DiMarco RB | ATL</td> 
+  <td>GB</td>
+  <td>11,18</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.3</td>	
+  <td>0.2</td>	
+  <td>1.9</td>	
+  <td>9.5</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.03</td>
+  </tr>	
+
+    <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>DeAndrew White WR | NE</td> 
+  <td>PIT</td>
+  <td>9,18</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>
+  </tr>	
+	
+  <tr>
+  <!-- <td></td> -->
+  <td>FA</td>	
+  <td>Jahwan Edwards RB | CLE</td> 
+  <td>BYE</td>
+  <td>13,18,19,20</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>
+  <td>0.0</td>	
+  <td>0.0</td>	
+  <td>0.0</td>
+  </tr>	
+	
+  </tbody>
+  </table>
+ 
+    <div class="clear"></div>
+</div>
+   <div class="pagination">
+	 <a href="#" class="active">1</a>
+	 <a href="#">2</a>
+	 <a href="#">3</a>
+	 <a href="#">4</a>
+	 <a href="#">...</a>
+	 <a href="#">All</a>
+	 </div>
+  <div class="clear"></div>
+</div>
+  
+  
+  
+  
+   <div class="footer">
+   <div class="container">
+   <div class="text-center">
+   <div class="social">
+   <div>
+   <a href="#" class="fb-icon"></a>
+   <a href="#" class="tweet-icon"></a>
+   <a href="#" class="google-icon"></a>
+   <a href="#" class="youtupe-icon"></a>
+   <a href="#" class="instagram-icon"></a>
+   <a href="#" class="pintrest-icon"></a>
+   </div>
+   <p>© 2005-2016 CBS INTERACTIVE. ALL RIGHTS RESERVED.</p>
+   <p>CBS Sports is a registered trademark of CBS Broadcasting Inc.</p>
+
+   </div>
+   
+   
+   </div>
+   </div>
+   
+   </div>
+   
+<script src="js/jquery.min.js"></script>
+<script src="js/maps.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){$().orion({speed:500,animation: "zoom"});});
+</script>
+
+</body>
+</html>

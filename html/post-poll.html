@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>:- Fantasy Football :-</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  
+  <body>
+  <div class="header">
+  <div class="container">
+	<div class="text-center">
+	<div class="logo">
+		<img src="images/logo.png"/>
+	
+	</div>
+		<a href="#"><input type="text" placeholder="search players"/></a>
+		<div class="profile">
+		<div>
+			<img src="images/profile.jpg" /> 
+			<span class="name">Todd Birk </span> 
+			<span style="display: inline-block;"> <a class="login" href="#" onmouseover="show3()"></a></span>
+			<span style="display: inline-block;"><a href="#" class="set-icon"></a></span>
+		</div>
+ <div class="edit-menu">
+   <ul id="editlist1" style="display:none;">
+      <li><a href="#"><span class="logout"></span>Logout</a></li>        
+      <li><a href="#"><span class="account-set"></span>Account Settings</a></li>        
+          
+    </ul>
+	</div>
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+  
+  <div class="menu">
+  <div class="container">
+  <ul class="orion-menu green" style="padding:0px;margin: 0;list-style: none;">
+  <li><a href="#">Leauge</a>
+   <ul>
+  <li><a href="#">Home</a></li>
+  </ul>
+  </li>
+  <li>
+  <a href="#">My Team</a>
+  <ul>
+  <li><a href="#">Roster</a></li>
+  <li><a href="#">Settings</a></li>
+  </ul>
+   </li>
+  <li><a href="#">Players</a>
+  <ul>
+  <li><a href="#">Stats</a></li>
+  <li><a href="#">INJURY REPORT</a></li>
+  <li><a href="#">DEPTH CHARTS</a></li>
+  </ul>
+  </li>
+  <li><a href="#">Scores</a>
+   <ul>
+  <li><a href="#">FANTASY GAMETRACKER</a></li>
+  <li><a href="#">NFL GAMES</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Standings</a>
+  <ul>
+  <li><a href="#">OVERALL</a></li>
+  <li><a href="#">BREAKDOWN</a></li>
+  <li><a href="#">POWER RANKING</a></li>
+  <li><a href="#">TOURNAMENTS</a></li>
+  <li><a href="#">PLAYOFF RACE</a></li>
+  <li><a href="#">COACK OF THE YEAR</a></li>
+   </ul> 
+  </li>
+  <li><a href="#">Commisoner</a></li>
+  </ul>
+  </div>
+  <div class="clear"></div>
+  </div>
+  <div class="banner"><img src="images/banner.jpg"></div>
+
+  <div class="container">
+  <div class="text-center contant">
+  <h1>Post a Poll <br> <span>Todds Tough MOFOs<br>(3 - 7 - 0)</span></h1>
+  </div>
+  </div>
+ <div class="container">
+ <div class="alart-msg">
+<h3>ALERT</h3>
+<p>All polls will be CC'd to your league's email list. If you don't want to receive message board postings in your INBOX, visit the Options/Alerts page.</p>
+ </div>
+
+<h1 class="title">Post a Poll</h1>
+<div>
+<div class="update-message">
+<form>
+<p>Type Poll Question:</p>
+<textarea class="formText" type="textarea" id="message" cols="60" rows="5"></textarea>
+<p>Type Poll Answers:</p>
+ <div class="answer-div"><span class="number">1</span> <span class="text"><input type="text"></span></div>
+ <div class="answer-div"><span class="number">2</span> <span class="text"><input type="text"></span></div>
+ <div class="answer-div"><span class="number">3</span> <span class="text"><input type="text"></span></div>
+ <div class="answer-div"><span class="number">4</span> <span class="text"><input type="text"></span></div>
+ <div class="answer-div"><span class="number">5</span> <span class="text"><input type="text"></span></div>
+</form>
+	<div class="btn-div" style="float:none;">
+	 <input class="add-team-btn" type="button" value="OK">
+	  <div class="clear"></div>
+     </div>
+
+</div>
+</div>
+</div>
+
+   
+   <div class="footer">
+   <div class="container">
+   <div class="text-center">
+   <div class="social">
+   <div>
+   <a href="#" class="fb-icon"></a>
+   <a href="#" class="tweet-icon"></a>
+   <a href="#" class="google-icon"></a>
+   <a href="#" class="youtupe-icon"></a>
+   <a href="#" class="instagram-icon"></a>
+   <a href="#" class="pintrest-icon"></a>
+   </div>
+   <p>© 2005-2016 CBS INTERACTIVE. ALL RIGHTS RESERVED.</p>
+   <p>CBS Sports is a registered trademark of CBS Broadcasting Inc.</p>
+
+   </div>
+   
+   
+   </div>
+   </div>
+   
+   </div>
+   
+<script src="js/jquery.min.js"></script>
+<script src="js/maps.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){$().orion({speed:500,animation: "zoom"});});
+</script>
+<script>
+ function show3() { 
+	<!--  alert("Hello! I am an alert box!!"); -->
+         if(document.getElementById('editlist1').style.display=='none') { 
+            document.getElementById('editlist1').style.display='block'; 
+			<!-- alert("Hello! I am an alert box!!2"); -->
+				
+		    } 
+        
+      else if(document.getElementById('editlist1').style.display=='block') { 
+	  <!-- alert("Hello! I am an alert box!!3"); -->
+	            document.getElementById('editlist1').style.display='none'; 
+			    } 
+    }
+</script>
+</body>
+</html>
