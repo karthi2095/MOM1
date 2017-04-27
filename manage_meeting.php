@@ -16,6 +16,8 @@
 		//$objAdmin->Delete_Record($tablename,$id,$word);
 		$objAdmin->Delete_Meeting();
 	}
+	$date=date("Y-m-d");
+	$objSmarty->assign("dat", $date);
 	$objSmarty->assign("ActivePage", "3");
 	$objAdmin->Getmeeting();
 	$objSmarty->assign("objAdmin", $objAdmin);

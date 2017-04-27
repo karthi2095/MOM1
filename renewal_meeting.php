@@ -7,20 +7,21 @@
 	$objAdmin->sesionset();
 	if($_REQUEST['hdAction']!=""){
 		//print_r($_REQUEST);
-		$objAdmin->update_meeting();
+		$objAdmin->renewal_meeting();
 		
 	}
 	$objSmarty->assign("ActivePage", "3");
 
 	$objAdmin->GetdeptByID();
-	$objAdmin->Getnotuser();
+	//$objAdmin->Getnotuser();
 	$objAdmin->GetuseByID();
-	$objAdmin->Getmeetingtype();
+	//$objAdmin->Getmeetingtype();
 	$objAdmin->getMeetingById();
 	$date=date("Y-m-d");
 	$objSmarty->assign("dat", $date);
-	//$objAdmin->getActionById();
+	$objAdmin->getActionById();
+	
 	$objSmarty->assign("objAdmin",$objAdmin);
-	$objSmarty->assign("IncludeTpl", "edit_meeting.tpl");
+	$objSmarty->assign("IncludeTpl", "renewal_meeting.tpl");
 	$objSmarty->display("pagetemplate.tpl");
 ?>
