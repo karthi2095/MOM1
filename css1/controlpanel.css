@@ -1,0 +1,87 @@
+.panel-left{width:29%; float:left;padding:0px;margin:0px;}
+.panel-right{width:70%; float:left;padding:0px;margin:0px;margin-left: 10px;}
+
+.panel-left-new{width:39%; float:left;padding:0px;margin:0px;}
+.panel-right-new{width:60%; float:left;padding:0px;margin:0px;margin-left: 10px;}
+
+.panel-center{width:100%; float:left;padding:0px;margin:0px;}
+.breakdown-div{width:100%;padding:10px;background:#fff;box-shadow: 1px 2px 2px 1px #b7a49a;}
+.clear{clear:both;display:block;padding:0; margin:0;}
+p.title{font-size:19px;color:#ca2f2e;margin:5px 0px;}
+.breakdown-div .contant-div{width:33.3%;float:left}
+.breakdown-div .pie-contant-div{width:33.3%;float:left}
+.breakdown-div .contant-div h1{font-size:24px;text-align: center;margin: 5px 0px;}
+.breakdown-div .contant-div h1 span{font-weight:bold;}
+.color-red{color:#C72430}
+.color-yellow{color:#E59915}
+
+.lead-month .breakdown-div .contant-div {
+    width: 31.3%;
+    float: left;
+    margin-right: 15%;
+}
+.mar-ri0{margin-right:0px !important;}
+
+
+.lead-month .ui-widget.ui-widget-content {background:#71B37C;height: 25px;border-radius: 0px;border: none;}
+.lead-month .ui-slider-horizontal .ui-slider-handle {  top: -1em; margin-left: -.6em;  height: 40px;width: 10px; border-radius:0px; background:#4A4A4A;right: 0%;border:none;}
+#slider1 .lead-month .ui-slider-horizontal .ui-slider-handle {left:100% !important;}
+#slider2 .lead-month .ui-slider-horizontal .ui-slider-handle {left:100% !important;}
+
+.lead-month .progress{height: 25px;border-radius: 0px;border: none;}
+
+.lead-month .progress .strick {top: -1em; margin-left: -.6em;  height: 40px;width: 10px; border-radius:0px; background:#4A4A4A;right: 0%;border:none;}
+
+
+.table-new table tr td{border:1px solid #ddd;padding:5px;border-collapse:collapse;}
+.detail-table .table-new table tr td{border:1px solid #ddd;padding:5px;border-collapse:collapse;text-align:left;color:#010D4D}
+.detail-table .table-new table tr th{padding: 10px;color: #fff;text-align:left;font-weight: normal;}
+/* .detail-table .table-new table tr{border:1px solid #ddd;} */
+.detail-table .table-new table {border:1px solid #ddd;} 
+.detail-table .table-new table tr:last-child td{color:#000;}
+
+.detail-table1 .table-new table tr td{border:1px solid #353535;padding:5px;border-collapse:collapse;text-align:left;color:#010C4D}
+.detail-table1 .table-new table tr th{padding: 10px;color: #000;text-align:left;font-weight: normal;border: 1px solid #a76d08;}
+/* .detail-table .table-new table tr{border:1px solid #020A65;} */
+.detail-table1 .table-new table {border:1px solid #353535;} 
+
+.canvasjs-chart-credit{display:none;}
+
+.vertical {
+  display: inline-block;
+  width: 20%;
+  height: 40px;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+.vertical {
+  box-shadow: inset 0px 4px 6px #ccc;
+}
+.progress-bar {
+  box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
+}
+
+.progress-bar-vertical {
+  width: 39px;
+min-height: 200px;
+display: flex;
+align-items: flex-end;
+margin-right: 5px;
+float: left;
+border-radius: 0px !important;
+box-shadow: none !important;
+background: none !important;
+margin-bottom: 0px !important;
+}
+
+.progress-bar-vertical .progress-bar {
+  width: 100%;
+  height: 0;
+  -webkit-transition: height 0.6s ease;
+  -o-transition: height 0.6s ease;
+  transition: height 0.6s ease;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#safari { display: block; }
+}
+.clear-1{clear:both; content:"."; display:block;}
