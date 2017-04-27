@@ -4,7 +4,7 @@ class Login extends MysqlFns
 	function Login()
 	{
 		global $config;
-        $this->MysqlFns();
+	        $this->MysqlFns();
 		$this->Offset			= 0;
 		$this->Limit			= 15;
 		$this->page				= 0;
@@ -13,244 +13,416 @@ class Login extends MysqlFns
 		$this->PerPage			= '';
 	}
 	
+	
 	function chkLogin()
+	{	
+		global $_SESSION;
+		global $objSmarty;	
+		if(isset($_SESSION['StudId']) && !empty($_SESSION['StudId'])){
+			$objSmarty->assign("UserID", $_SESSION['StudId']);
+			$objSmarty->assign("UserName", $_SESSION['Username']);		
+		} else if(isset($_SESSION['TutorId']) && !empty($_SESSION['TutorId'])){
+			$objSmarty->assign("TutorId", $_SESSION['TutorId']);
+			$objSmarty->assign("UserName", $_SESSION['TutorName']);
+		} else {
+			$objSmarty->assign("UserID", '');
+			$objSmarty->assign("UserName", '');	
+			$objSmarty->assign("TutorId", '');	
+		}	
+	}
+	
+	function MakeStudentLogin()
 	{
-	global $_SESSION;
-		if(isset($_SESSION['UserId']) && !empty($_SESSION['UserId']))
-		{
-			return true;
+		global $objSmarty;
+		$sql = "SELECT * FROM `tbl_student`"
+		       ." WHERE 
+		       binary `Username`='".$_REQUEST['username']."' 
+		       AND
+		       binary `Password`='".addslashes($_REQUEST['pword'])."'";
+		       
+		$sle		= $this->ExecuteQuery($sql, "select");
+		$Count		= $this->ExecuteQuery($sql, "norows");
+					
+		if($Count > 0){
+			$sle[0]['Status'];
+			if($sle[0]['Status']==1){
+				$details = $this->ExecuteQuery($sql, "select");
+				session_start();
+				$_SESSION['StudId']=$details[0]['StudId'];			
+				$_SESSION['Username']=$details[0]['Username'];
+				/*$_SESSION['FirstName']=$details[0]['FirstName'];
+				$_SESSION['LastName']=$details[0]['LastName'];
+				$_SESSION['Email']=$details[0]['Email'];*/
+				$_SESSION['session_id']=session_id();
+				header("Location:studentprofile.php"); 
+			}else{
+				$objSmarty->assign("ErrorMessage", "Student has been deactivated. Please contact Admin");
+			}
+		}else{
+			$objSmarty->assign("ErrorMessage", "Invalid Login");
 		}
-		else{
-			//Redirect("index.php");
-			header("Location:index.php");
-		}
+	}
+	
+	function chkStudentLogin()
+	{
+		global $_SESSION;
+		global $objSmarty;		
+		if(isset($_SESSION['StudId']) && !empty($_SESSION['StudId'])) {
+			$objSmarty->assign("UserID", $_SESSION['StudId']);
+			$objSmarty->assign("UserName", $_SESSION['Username']);	
+		} else {
+			$objSmarty->assign("UserID", '');
+			$objSmarty->assign("UserName", '');
+			//$objSmarty->assign("ErrorMessage", "Invalid Login");			
+			Redirect("index.php");
 		//echo "check user login block...";
+		}
 	} 
 	
-function MakeLoginusers()
-	{
-	
-		global $objSmarty;
-		 	 $sql = "SELECT * FROM `tbl_user`"
-			 ." WHERE  `Email`='".addslashes($_REQUEST['Logemail'])."'  AND binary `Password`='".addslashes($_REQUEST['password'])."' ";
-			 $sle		= $this->ExecuteQuery($sql, "select");
-			 $Count		= $this->ExecuteQuery($sql, "norows");
-			if($Count > 0){
-				
-			if (isset($_REQUEST['Logemail']) && isset($_REQUEST['password'])) {
-
-  $Logemail = $_REQUEST['Logemail'];
-  $password = $_REQUEST['password'];
-
-  if (isset($_REQUEST['remember']) && $_REQUEST['remember'] == 'on') {
-  
-    /*
-     * Set Cookie from here for one hour
-     * */
-    setcookie("Logemail", $Logemail, time() + 31536000);
-    setcookie("password", $password, time() + 31536000);  /* expire in 1 hour */
-  } else {
-    /**
-     * Following code will unset the cookie
-     * it set cookie 1 sec back to current Unix time
-     * so that it will invalid
-     * */
-    //setcookie("username", $username, time()-1);
-    //setcookie("password", $password, time()-1);
-  }
-
-} else {
-  $email = '';
-  $password = '';
-
-  if (isset($_COOKIE['Logemail'])) {
-    $Logemail = $_COOKIE['Logemail'];
-  }
-
-  if (isset($_COOKIE['password'])) {
-    $password = $_COOKIE['password'];
-  }
-}
-
-			
-			
-			 	if($sle[0]['Status']==1 && $sle[0]['MailStatus']==1){
-			 		$details = $this->ExecuteQuery($sql, "select");
-			 		session_start();
-			 		$_SESSION['Email']=$details[0]['Email'];
-			 		//$_SESSION['UserName']=$details[0]['Username'];
-			 		$_SESSION['FirstName']=$details[0]['FirstName'];
-			 		$_SESSION['LastName']=$details[0]['LastName'];
-					$_SESSION['UserType']=$details[0]['UserType'];
-					$_SESSION['UserId']=$details[0]['UserId'];
-					$_SESSION['session_id']=session_id();
-					$_SESSION['last_activetime'] = time();
-			 		// for the cookies variable update	 
-	          //print_r($details);exit;
-					 if($_REQUEST['ty']==1){
-					 		 header("Location:referfriends.php");
-					 }else{
-					 //header("Location:dashboard.php");
-					 header("Location:profile.php");
-					 } //exit;
-			 	}if($sle[0]['Status']==0 && $sle[0]['MailStatus']==1){
-			 		$objSmarty->assign("ErrorMessage", "Admin has been blocked your account.");
-			 	}
-			 if($sle[0]['Status']==0 && $sle[0]['MailStatus']==0){
-			 		$objSmarty->assign("ErrorMessage", "Your account is not yet activated.Please check your mail and activate your account.");
-			 	}
-			  if($sle[0]['Status']==1 && $sle[0]['MailStatus']==0){
-			 		$objSmarty->assign("ErrorMessage", "Your account is not yet activated.Please check your mail and activate your account.");
-			 	}
-			 }else{
-			 	$objSmarty->assign("ErrorMessage", "Invalid Login");
-			 }
-		 $objSmarty->assign("Logemail", $Logemail);
-			 $objSmarty->assign("password", $password);	
-	}
-	
-	function getOrderDetails($id)
-	{
-		 global $objSmarty;
-		$SelQuery	= "SELECT * FROM `payment`"
-					  ." WHERE `ID`='$id'";
-		$ExeSelQuery= $this->ExecuteQuery($SelQuery,"select");
-		$objSmarty->assign("OrderList",$ExeSelQuery);
-	}
-	
-	
-	function MakeLogout()
+	function MakeStudentLogout()
 	{	
-		unset($_SESSION['UserName']);
-unset($_SESSION['FirstName']);unset($_SESSION['LastName']);unset($_SESSION['Email']);
-		unset($_SESSION['UserId']);
-		unset($_SESSION['UserType']);
+		unset($_SESSION['Username']);
+		/*unset($_SESSION['FirstName']);
+		unset($_SESSION['LastName']);
+		unset($_SESSION['Email']);*/
+		unset($_SESSION['StudId']);
 		unset($_SESSION['session_id']);
 		
-			Redirect("index.php");
+		header("Location:index.php");
 	}
 	
-	function forgotPass()
+	function forgotStudentPass()
 	{
 		global $objSmarty,$config;
-		$sql = "SELECT * FROM `tbl_user`"
+		$sql = "SELECT * FROM `tbl_student`"
 		       ." WHERE `Email` = '".$_REQUEST['email']."'";
 		       
 		$Count		= $this->ExecuteQuery($sql, "norows");
 		if($Count > 0){
 			$details = $this->ExecuteQuery($sql, "select");
 			$Email = $details[0]['Email'];			
-			$Name=$details[0]['FirstName'].' '.$details[0]['LastName'];
+			$UserName=$details[0]['Username'];
 			$Password=$details[0]['Password'];
-			$subject = "PromusiciansList - Password Request!!!";
-			$sql="select * from tbl_site where Id='1'";
-		$Result	= $this->ExecuteQuery($sql, "select");
-		$from=$Result[0]['Email'];
-			
-			
-			$imgurl="".$config['SiteGlobalPath']."/admin/img/logo.png";
+			$subject = "Bookwormz - Password Request!!!";
 			$message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-			<html xmlns="http://www.w3.org/1999/xhtml">
-			<head>
-			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-			<title>Donisde</title>
-			<style type="text/css">
-			<!--
-			.style1 {
-				font-size: 16px;
-				font-weight: bold;
-			}
-			-->
-			</style>
-			</head>
-			
-			<body>
-			<table width="700" border="0" cellspacing="0" cellpadding="7">
-			  <tr>
-			    <td bgcolor="#000000"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-			      <tr>
-			        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-			          <tr>
-			            </tr>
-			          <tr>
-			            <td height="35" align="center" bgcolor="#FFFFFF" class="normal_txt7"><table width="97%"  cellspacing="4" cellpadding="4" style="font-family:Verdana; font-size:12px;">
-			              <tr>
-			                <td height="25" colspan="2"><img src="'.$imgurl.'" border="0" /></td>
-			                </tr>
-			             
-			              <tr>
-			                <td width="17%" bgcolor="#F8F8F8"></td>
-			                <td width="83%" height="25" align="left" valign="middle" bgcolor="#F8F8F8" ><span class="normal_blue">Hi '.$Name.'</span></td>
-			                </tr>
-							<tr>
-			                <td bgcolor="#F8F8F8"></td>
-			                <td height="25" align="left" valign="middle" bgcolor="#F8F8F8" ><span class="normal_blue">Your login details:</span></td>
-			                </tr>
-			                <tr>
-			                <td bgcolor="#F8F8F8"</td>
-			                <td height="25" align="left" valign="middle" bgcolor="#F8F8F8" ><span style="font-family: Arial, Helvetica, sans-serif;	font-size: 12px; font-weight: bold;	color: #000000;	text-decoration: none;" >Email: &nbsp;</span><b>'.$Email.'</b></td>
-			                </tr>
-							<tr>
-			                <td valign="top" bgcolor="#F8F8F8"></td>
-			                <td height="25" align="left" valign="middle" bgcolor="#F8F8F8" ><span style="font-family: Arial, Helvetica, sans-serif;	font-size: 12px; font-weight: bold;	color: #000000;	text-decoration: none;" >Password: &nbsp;</span><b>'.$Password.'</b></td>
-			                </tr>
-			                
-			                 <tr>
+				<html xmlns="http://www.w3.org/1999/xhtml">
+				<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+				<title>Password Retrival</title>
+				<link href="melslifecss.css" rel="stylesheet" type="text/css" />
+				</head>
+				
+				<body>
+				<table width="75%" border="0" align="center" bgcolor="#e7f2f7" cellpadding="5" cellspacing="0" class="border_grey">
+				  <tr>
+					<td width="100%" height="" align="left" bgcolor="#fff" class="normal_txt7"><img src="http://rajasriglobal.com/tutorwebsite/images/logo.jpg" /></td>
+				  </tr>
+				  <tr>
+					<td><table width="100%"  cellspacing="0" cellpadding="0">
+
+					  <tr>
+						<td width="8">&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" style="font-family: Arial, Helvetica, sans-serif;
+								font-size: 14px;
+								font-weight: bolder;
+								color: #fd0803;">Bookwormz</td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2" ></td>
+					  </tr>
+					  <tr>
+						<td>&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" ><div align="justify" style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: normal;color: #000000;text-decoration: none;" >Your login details:</div></td>
+					  </tr>
+					  <tr>
 						<td height="8"></td>
 						<td height="8" colspan="2"></td>
 					  </tr>
-					  
 					  <tr>
-						
+						<td>&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" ><span style="font-family: Arial, Helvetica, sans-serif;	font-size: 12px; font-weight: bold;	color: #000000;	text-decoration: none;" >Username: &nbsp;</span><b>'.$UserName.'</b></td>
+					  </tr>
+					  <tr>
+						<td>&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" ><span style="font-family: Arial, Helvetica, sans-serif;	font-size: 12px; font-weight: bold;	color: #000000;	text-decoration: none;" >Password: &nbsp;</span><b>'.$Password.'</b></td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2"></td>
+					  </tr>
+					  <tr>
+						<td colspan="2">&nbsp;</td>
+					  </tr>
+					  <tr>
+						<td colspan="2">&nbsp;</td>
+					  </tr>						  					  
+					  <tr>
+						<td height="8"></td>
 						<td height="8" colspan="2" align="left">Thanks,</td>
-						<td height="8"></td>
 					  </tr>
 					  <tr>
-						
-						<td height="8" colspan="2" align="left">Admin</td>
 						<td height="8"></td>
+						<td height="8" colspan="2" align="left">Bookwormz Team</td>
 					  </tr>
 					  <tr>
 						<td height="8"></td>
 						<td height="8" colspan="2"></td>
 					  </tr>
-					 
-			            </table></td>
-			          </tr>
-			        </table></td>
-			      </tr>
-			    </table></td>
-			  </tr>
-			</table>
-			</body>
-			</html>';
-		
-			$headers = 'From: '.$from."\r\n";
-			$headers.= 'Reply-To: '.$from."\r\n";
+					</table></td>
+				  </tr>
+				  <tr>
+					<td>&nbsp;</td>
+				  </tr>				  				  
+				</table>
+				</body>
+				
+				</html>';
+			$headers = 'From: '.$config['AdminMail']."\r\n";
+			$headers.= 'Reply-To: '.$config['AdminMail']."\r\n";
 			$headers.= "MIME-Version: 1.0\r\n";
 			$headers.= "Content-type: text/html; charset=iso-8859-1\r\n";		
-		
-			//echo $message;
+			//echo $message; exit;
+			
+			//echo $Email . " $subject ". " $message " . $headers; exit;
 			@mail($Email,$subject,$message,$headers);
 			$objSmarty->assign("SuccessMessage", "Login details has been sent successfully. Please check your mail");
-					
+			$objSmarty->assign("Student","");			
 		}else{
 			$objSmarty->assign("ErrorMessage", "Given email is not available in our database. Please check the email you have entered");
 		}
 	}
 	
+	function SelectUser()
+	{
+	    global $objSmarty;
+		$SelQuery	= "SELECT * FROM `customers`"
+					  ." WHERE `customers_id`='".$_SESSION['LoginId']."'";
+		$ExeSelQuery= $this->ExecuteQuery($SelQuery,"select");
+		$objSmarty->assign("SelectUser",$ExeSelQuery);
+	}
 	
+	function UpdateUser()
+	{
+	    global $objSmarty;
+		$up="UPDATE `customers` SET `customers_firstname` = '".$_REQUEST['firstname']."',
+		`customers_lastname` = '".$_REQUEST['lastname']."',
+		`customer_username` = '".$_REQUEST['username']."',
+		`city` = '".$_REQUEST['area']."',
+		`state` = '".$_REQUEST['state']."',
+		`country` = '".$_REQUEST['country']."',
+		`customers_email_address` = '".$_REQUEST['email']."',
+		`customers_telephone` = '".$_REQUEST['phone']."' WHERE `customers_id`=".$_SESSION['LoginId'] ; //echo $up; exit;
+		$this->ExecuteQuery($up, "update");
+		$objSmarty->assign('SuccessMessage',"Profile has been updated successfully");
+	}
 	
-}
+	function UpdatePassword()
+	{
+	    global $objSmarty;	
+		$sql = "SELECT * FROM `customers`"
+		       ." WHERE binary `customers_password`='".$_POST['oldpassword']."'";
+		$sle		= $this->ExecuteQuery($sql, "select");
+		$Count		= $this->ExecuteQuery($sql, "norows");
+		if($Count > 0){				
+			$up="UPDATE `customers` SET `customers_password` = '".$_REQUEST['newpassword']."' WHERE `customers_id`=".$_SESSION['LoginId'] ;
+			$this->ExecuteQuery($up, "update");
+			$objSmarty->assign('SuccessMessage',"Password has been updated Successfully");
+		} else {
+			$objSmarty->assign("ErrorMessage", "Invalid Old Password");
+		}		
+	}
+	
+	/*function Update_Mode()
+	{
+	    global $objSmarty;
+		if($_REQUEST['mode']=="Bank Transfer"){
+			$var=" , `Accnum`='".$_REQUEST['accno']."', `SwiftBic`='".$_REQUEST['code']."', `IBAN`='".$_REQUEST['IBAN']."', `BankName`='".$_REQUEST['bankname']."', BankAdd='".$_REQUEST['bankadd']."'";
+		}
+		$up="UPDATE `tbl_member` SET `TransferMode` = '".$_REQUEST['mode']."', `AmtBal`='".$_REQUEST['amt']."', `joined_date`=now() $var WHERE `member_id`=".$_SESSION['LoginId'] ;
+		$this->ExecuteQuery($up, "update");
+		$objSmarty->assign('SuccessMessage',"Your account details has sent to administrator successfully");
+	}*/
+	
+	function get_home()
+	{
+		global $objSmarty;
+		$SelQuery	= "SELECT * from `tbl_staticpages` where pagename = 'home'";
+		$ExeSelQuery= $this->ExecuteQuery($SelQuery,"select");
+		$objSmarty->assign("Cat",$ExeSelQuery);
+	}
+	
+    function get_contact()
+	{
+		global $objSmarty;
+		$SelQuery	= "SELECT * from `tbl_staticpages` where pagename = 'Contact'";
+		$ExeSelQuery= $this->ExecuteQuery($SelQuery,"select");
+		$objSmarty->assign("Cat",$ExeSelQuery);
+	}
 	
 
+	/******************************************************************************
+	 */
 	
+	function MakeTutorLogin()
+	{
+		global $objSmarty;
+		$sql = "SELECT * FROM `tbl_tutor`"
+		       ." WHERE 
+		       binary `Username`='".$_REQUEST['username']."' 
+		       AND
+		       binary `Password`='".addslashes($_REQUEST['pword'])."'";
+		       
+		$sle		= $this->ExecuteQuery($sql, "select");
+		$Count		= $this->ExecuteQuery($sql, "norows");
+					
+		if($Count > 0){
+			$sle[0]['Status'];
+			if($sle[0]['Status']==1){
+				$details = $this->ExecuteQuery($sql, "select");
+				session_start();
+				$_SESSION['TutorId']=$details[0]['TutorId'];			
+				$_SESSION['TutorName']=$details[0]['Username'];
+				/*$_SESSION['FirstName']=$details[0]['FirstName'];
+				$_SESSION['LastName']=$details[0]['LastName'];
+				$_SESSION['Email']=$details[0]['Email'];*/
+				$_SESSION['session_id']=session_id();
+				header("Location:tutorprofile.php"); 
+			}else{
+				$objSmarty->assign("ErrorMessage", "Tutor has been deactivated. Please contact Admin");
+			}
+		}else{
+			$objSmarty->assign("ErrorMessage", "Invalid Login");
+		}
+	}
 	
+	function chkTutorLogin()
+	{
+		global $_SESSION;
+		global $objSmarty;		
+		if(isset($_SESSION['TutorId']) && !empty($_SESSION['TutorId'])) {
+			$objSmarty->assign("TutorId", $_SESSION['TutorId']);
+			$objSmarty->assign("UserName", $_SESSION['TutorName']);	
+		} else {
+			$objSmarty->assign("TutorId", '');
+			$objSmarty->assign("TutorName", '');			
+			$objSmarty->assign("ErrorMessage", "Invalid Login");			
+			Redirect("index.php");
+		//echo "check user login block...";
+		}
+	} 
 	
-	
-	
-	
+	function MakeTutorLogout()
+	{	
+		unset($_SESSION['TutorName']);
+		unset($_SESSION['FirstName']);
+		unset($_SESSION['LastName']);
+		unset($_SESSION['Email']);
+		unset($_SESSION['TutorId']);
+		unset($_SESSION['session_id']);
+		
+		header("Location:index.php");
+	}
 
-	
+	function forgotTutorPass()
+	{
+		global $objSmarty,$config;
+		$sql = "SELECT * FROM `tbl_tutor`"
+		       ." WHERE `Email` = '".$_REQUEST['email']."'";
+		       
+		$Count	= $this->ExecuteQuery($sql, "norows");
+		if($Count > 0){
+			$details = $this->ExecuteQuery($sql, "select");
+			$Email = $details[0]['Email'];			
+			$UserName=$details[0]['Username'];
+			$Password=$details[0]['Password'];
+			$subject = "Bookwormz - Password Request!!!";
+			$message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml">
+				<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+				<title>Password Retrival</title>
+				<link href="melslifecss.css" rel="stylesheet" type="text/css" />
+				</head>
+				
+				<body>
+				<table width="75%" border="0" align="center" bgcolor="#e7f2f7" cellpadding="5" cellspacing="0" class="border_grey">
+				  <tr>
+					<td width="100%" height="" align="left" bgcolor="#fff" class="normal_txt7"><img src="http://rajasriglobal.com/tutorwebsite/images/logo.jpg" /></td>
+				  </tr>
+				  <tr>
+					<td><table width="100%"  cellspacing="0" cellpadding="0">
 
+					  <tr>
+						<td width="8">&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" style="font-family: Arial, Helvetica, sans-serif;
+								font-size: 14px;
+								font-weight: bolder;
+								color: #fd0803;">Bookwormz</td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2" ></td>
+					  </tr>
+					  <tr>
+						<td>&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" ><div align="justify" style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: normal;color: #000000;text-decoration: none;" >Your login details:</div></td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2"></td>
+					  </tr>
+					  <tr>
+						<td>&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" ><span style="font-family: Arial, Helvetica, sans-serif;	font-size: 12px; font-weight: bold;	color: #000000;	text-decoration: none;" >Username: &nbsp;</span><b>'.$UserName.'</b></td>
+					  </tr>
+					  <tr>
+						<td>&nbsp;</td>
+						<td colspan="2" align="left" valign="middle" ><span style="font-family: Arial, Helvetica, sans-serif;	font-size: 12px; font-weight: bold;	color: #000000;	text-decoration: none;" >Password: &nbsp;</span><b>'.$Password.'</b></td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2"></td>
+					  </tr>
+					  <tr>
+						<td colspan="2">&nbsp;</td>
+					  </tr>
+					  <tr>
+						<td colspan="2">&nbsp;</td>
+					  </tr>						  					  
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2" align="left">Thanks,</td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2" align="left">Bookwormz Team</td>
+					  </tr>
+					  <tr>
+						<td height="8"></td>
+						<td height="8" colspan="2"></td>
+					  </tr>
+					</table></td>
+				  </tr>
+				  <tr>
+					<td>&nbsp;</td>
+				  </tr>				  				  
+				</table>
+				</body>
+				</html>';
+			$headers = 'From: '.$config['AdminMail']."\r\n";
+			$headers.= 'Reply-To: '.$config['AdminMail']."\r\n";
+			$headers.= "MIME-Version: 1.0\r\n";
+			$headers.= "Content-type: text/html; charset=iso-8859-1\r\n";		
+
+			//echo $Email . " $subject ". " $message " . $headers; exit;
+			@mail($Email,$subject,$message,$headers);
+			$objSmarty->assign("SuccessMessage", "Login details has been sent successfully. Please check your mail");
+			$objSmarty->assign("Student","");			
+		}else{
+			$objSmarty->assign("ErrorMessage", "Given email is not available in our database. Please check the email you have entered");
+		}
+	}	
+	
+}	
 ?>
