@@ -11,7 +11,7 @@
 		
 	}
 	$objSmarty->assign("ActivePage", "3");
-
+	$objAdmin->adminlogin();
 	
 	$objAdmin->GetdeptByID();
 	$objAdmin->Getnotuser();
