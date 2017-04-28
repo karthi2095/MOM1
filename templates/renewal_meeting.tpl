@@ -135,8 +135,8 @@ document.getElementById('Actionitem').value=tot;
 
   
        jQuery(function($){
-           $( "#datepicker" ).datepicker();
-           $(".dtpicker").datepicker();
+           $( "#datepicker" ).datepicker({minDate: 0});
+           $(".dtpicker").datepicker({minDate: 0});
 		});
        function changedept(dept) {       	
            $.ajax({
@@ -164,8 +164,8 @@ document.getElementById('Actionitem').value=tot;
 			<input type="hidden" name="Actionitem" id="Actionitem" value="{$count}">
   <div id="center-column">
     <div class="top-bar-header">
-      <h1>Mintues of Meeting</h1>
-      <div class="breadcrumbs"><a href="controlPanel.php">Homepage</a> >> <a href="manage_meeting.php"> Mintues of Meeting </a> >> Renewal Meeting</div>
+      <h1>Minutes of Meeting</h1>
+      <div class="breadcrumbs"><a href="controlPanel.php">Homepage</a> >> <a href="manage_meeting.php"> Minutes of Meeting </a> >> Renewal Meeting</div>
     </div>
     <div class="select-bar">
 					
@@ -248,7 +248,7 @@ document.getElementById('Actionitem').value=tot;
 											</td>
 										</tr>
 			<tr>
-				<td style="padding: 15px;">Meeting Owner:<span class="mandatory" style="color:red">*</span></td>
+				<td style="padding: 15px;">Meeting Owner:</td>
 				<td>
 				Department:
 					
@@ -275,7 +275,7 @@ document.getElementById('Actionitem').value=tot;
 			
 			<tr>
 			
-				<td style="padding: 15px;" valign="top">Action Item:<span class="mandatory" style="color:red">*</span>
+				<td style="padding: 15px;" valign="top">Action Item:
 				<div  style="padding: 15px; margin-top: 40px; padding-left: 0px;" valign="top">Dependent Task:</div></td>
 				<td style="padding-top: 10px; padding-bottom: 10px;">
 				
@@ -354,8 +354,8 @@ document.getElementById('Actionitem').value=tot;
 							{if $use[U].Id eq  $getAction.0.DepatuserId} {$use[U].EmployeeName} {/if}</option>
 									{/section}
 								<br></br>
-								
-								
+								{assign var="userID" value=$smarty.session.userid}
+								{if $userID eq $getAction.0.DepatuserId}
 								<select name="statusid_1" id="statusid_1" style="width: 32%; /*! line-height: 20px; */ padding: 2px 0px;">
 										<option value="Open" {if  $getAction.0.StatusOfAction eq 'Open'} selected="selected" {/if}>Open</option>
 									    <option value="Closed" {if  $getAction.0.StatusOfAction eq 'Closed'} selected="selected" {/if}>Closed</option>
@@ -363,9 +363,15 @@ document.getElementById('Actionitem').value=tot;
 								</select>
 								<br></br>
 								<!--  <span style="margin-left: 26px; width: 63%; margin-top: 0px; display: inline-block;">-->
-								Action Due Date:<span class="mandatory" style="color: red">*</span>
+								Action Due Date:
 								<input name="datepickerid_1" id="datepickerid_1" class="dtpicker" value="{$getAction.0.DueDate|date_format:"%m/%d/%Y"}" size="30" type="text"> 
-							   
+							   {else}
+								 Status:
+								{$getAction.0.StatusOfAction}
+								<br><br>
+								Action Due Date:
+								{$getAction.0.DueDate}
+								{/if}
 								<br></br>
 						</div>
 									
@@ -379,13 +385,14 @@ document.getElementById('Actionitem').value=tot;
 									 {if $dept[Dp].Id eq $getAction.0.DepartmentId} {$dept[Dp].DepartmentName} {/if}
 									{/section}
 									 &nbsp;&nbsp;&nbsp;
-								EmployeeName:	 
+							EmployeeName:	 
 							{section name=U loop=$use}
 										{if $use[U].Id eq  $getAction.0.DepatuserId} {$use[U].EmployeeName} {/if}
 							{/section}
 									
 									<br></br>
 								
+								{if $userID eq $getAction.0.DepatuserId}
 								<select name="statusid_2"id="statusid_2" style="width: 32%;">
 									<option value="Open" {if  $getAction.0.StatusOfAction eq 'Open'} selected="selected" {/if}>Open</option>
 									<option value="Closed" {if  $getAction.0.StatusOfAction eq 'Closed'} selected="selected" {/if}>Closed</option>
@@ -394,7 +401,13 @@ document.getElementById('Actionitem').value=tot;
 								<!--<span style="margin-left: 15px; width: 63%; margin-top: 10px; display: inline-block;">-->
 								Action Due Date:
 								<input name="datepickerid_2" id="datepickerid_2" class="dtpicker" value="{$getAction.0.DueDate|date_format:"%m/%d/%Y"}" size="30" type="text">
-								
+								 {else}
+								 Status:
+								{$getAction.0.StatusOfAction}
+								<br><br>
+								Action Due Date:
+								{$getAction.0.DueDate}
+								{/if}
 								<br></br>
 								
 					</div>
@@ -415,7 +428,7 @@ document.getElementById('Actionitem').value=tot;
 										{if $use[U].Id eq  $getAction.0.DepatuserId} {$use[U].EmployeeName} {/if}
 							{/section}
 						<br></br>
-						
+						{if $userID eq $getAction.0.DepatuserId}
 								   <select name="statusid_3"id="statusid_3" style="width: 32%;">
 										<option value="Open" {if  $getAction.0.StatusOfAction eq 'Open'} selected="selected" {/if}>Open</option>
 										<option value="Closed" {if  $getAction.0.StatusOfAction eq 'Closed'} selected="selected" {/if}>Closed</option>
@@ -424,7 +437,13 @@ document.getElementById('Actionitem').value=tot;
 									<br></br>
 									Action Due Date:
 									<input name="datepickerid_3" id="datepickerid_3" class="dtpicker" value="{$getAction.0.DueDate|date_format:"%m/%d/%Y"}" size="30" type="text">
-								   
+								 {else}
+								 Status:
+								{$getAction.0.StatusOfAction}
+								<br><br>
+								Action Due Date:
+								{$getAction.0.DueDate}
+								{/if}
 								
 									<br></br>
 				  </div>
@@ -444,8 +463,7 @@ document.getElementById('Actionitem').value=tot;
 										{if $use[U].Id eq  $getAction.0.DepatuserId} {$use[U].EmployeeName} {/if}
 							{/section}
 									<br></br>
-									{assign var="userID" value=$smarty.session.userid}
-				 				{if $userID eq $getAction.0.DepatuserId || $userID eq $getAction.0.CreatedBy }
+							{if $userID eq $getAction.0.DepatuserId}
 									<select name="statusid_4"id="statusid_4" style="width: 32%;">
 									<option value="Open" {if  $getAction.0.StatusOfAction eq 'Open'} selected="selected" {/if}>Open</option>
 									<option value="Closed" {if  $getAction.0.StatusOfAction eq 'Closed'} selected="selected" {/if}>Closed</option>
@@ -454,55 +472,54 @@ document.getElementById('Actionitem').value=tot;
 									<br></br>			
 										Action Due Date:
 										<input name="datepickerid_4"id="datepickerid_4"	class="dtpicker" value="{$getAction.0.DueDate|date_format:"%m/%d/%Y"}" size="30" type="text">
-											{else}
-								Status:	
-							{$getAction.0.StatusOfAction} 
-							<br>
-							<br>
-								Action Due Date:
-							{$getAction.0.DueDate}
-								{/if}
-												
-												</div>
-												<br></br>
-												{$objAdmin->getActionitemById(4,1)}
-												<div id="action5"{if $getAction.0.Id neq ''} style="margin-bottom:10px;display:block;"{else} style="display:none;"{/if}">
-												{$getAction.0.ActionItem}
+										 {else}
+										 Status:
+										{$getAction.0.StatusOfAction}
+										<br><br>
+										Action Due Date:
+										{$getAction.0.DueDate}
+										{/if}
+										</div>
+										<br></br>
+				{$objAdmin->getActionitemById(4,1)}
+								<div id="action5"{if $getAction.0.Id neq ''} style="margin-bottom:10px;display:block;"{else} style="display:none;"{/if}">
+								{$getAction.0.ActionItem}
 								<br><br>
 								{$getAction.0.DependentTask} <br><br>
 								Department:
 									{section name=Dp loop=$dept}
-									 {if $dept[Dp].Id eq $getAction.0.DepartmentId} {$dept[Dp].DepartmentName} {/if}
+									{if $dept[Dp].Id eq $getAction.0.DepartmentId} {$dept[Dp].DepartmentName} {/if}
 									{/section}
 									 &nbsp;&nbsp;&nbsp;
 								EmployeeName:	 
-							{section name=U loop=$use}
-										{if $use[U].Id eq  $getAction.0.DepatuserId} {$use[U].EmployeeName} {/if}
-							{/section}
-												<br></br>
-											
+								{section name=U loop=$use}
+								{if $use[U].Id eq  $getAction.0.DepatuserId} {$use[U].EmployeeName} {/if}
+								{/section}
+								<br></br>
+						{if $userID eq $getAction.0.DepatuserId}
 												<select name="statusid_5"id="statusid_5" style="width: 32%;">
 												<option value="Open" {if  $getAction.0.StatusOfAction eq 'Open'} selected="selected" {/if}>Open</option>
 												<option value="Closed" {if  $getAction.0.StatusOfAction eq 'Closed'} selected="selected" {/if}>Closed</option>
 												<option value="Closed" {if  $getAction.0.StatusOfAction eq 'Yet to start'} selected="selected" {/if}>Yet to start</option>
 												</select>
-																
+												<br></br>			
 												 <span style="margin-left: 15px; width: 63%; margin-top: 10px; display: inline-block;">
 												Action Due Date:
-															<input name="datepickerid_5"
-																		id="datepickerid_5"
-																		class="dtpicker" value="{$getAction.0.DueDate|date_format:"%m/%d/%Y"}" size="30" type="text">
-																
-												
+													<input name="datepickerid_5" id="datepickerid_5" class="dtpicker" value="{$getAction.0.DueDate|date_format:"%m/%d/%Y"}" size="30" type="text">
+													 {else}
+													 Status:
+													{$getAction.0.StatusOfAction}
+													<br><br>
+													Action Due Date:
+													{$getAction.0.DueDate}
 												</div>
-			<tr>
-				<td style="padding: 15px;">Action - Status:</td>
-				<td>
-				
-					{$meet.0.ActionStatus}
-				</td>
-			</tr>
-			<!--<tr>
+												<tr>
+													<td style="padding: 15px;">Action - Status:</td>
+													<td>
+													{$meet.0.ActionStatus}
+													</td>
+												</tr>
+										<!--<tr>
 											<td style="padding: 15px;">Attachment file:<span
 												class="mandatory" style="color: red">*</span></td>
 											<td>

@@ -33,8 +33,8 @@ function cat_valid()
 	DepartmentName=document.getElementById('DepartmentName').value;
 	Department_user=document.getElementById('department_user').value;
 	InfoProvidedDesc=document.getElementById('InfoProvidedDesc').value;
-	ActionItem=document.getElementById('ActionItemId_1').value;
-	DueDate=document.getElementById('datepickerid_1').value;
+	ActionItem=document.getElementById('ActionItem_Id').value;
+	DueDate=document.getElementById('datepicker_id').value;
 	ActionStatus=document.getElementById('ActionStatus').value;
 	upload_file=document.getElementById('upload_file').value;
 	TargetDate=document.getElementById('TargetDate').value;
@@ -44,6 +44,11 @@ function cat_valid()
 	time=document.getElementById('timepicker').value;
 	venue=document.getElementById('venue').value;
 	Discussion=document.getElementById('Discussion').value;
+	DependentTask_Id=document.getElementById('DependentTask_Id').value;
+	Depatuser_Id=document.getElementById('Depatuser_Id').value;
+	Department_Id=document.getElementById('Department_Id').value;
+	status_id=document.getElementById('status_id').value;
+	
 	
 	if(MeetingName==''){
 	 
@@ -136,25 +141,46 @@ function cat_valid()
 	 }
 	if(ActionItem==''){
 		document.getElementById('errmsg').innerHTML='Please enter the ActionItem';
-		document.getElementById('ActionItemId_1').focus();
+		document.getElementById('ActionItem_Id').focus();
 		return false;
 	 }
+	if(DependentTask_Id==''){
+		document.getElementById('errmsg').innerHTML='Please enter the DependentTask';
+		document.getElementById('DependentTask_Id').focus();
+		return false;
+	 }
+	if(Department_Id=='0'){
+		document.getElementById('errmsg').innerHTML='Please select the Department';
+		document.getElementById('Department_Id').focus();
+		return false;
+	 }
+	if(Depatuser_Id=='0'){
+		document.getElementById('errmsg').innerHTML='Please select the user';
+		document.getElementById('Depatuser_Id').focus();
+		return false;
+	 }
+	if(status_id=='0'){
+		document.getElementById('errmsg').innerHTML='Please select the status';
+		document.getElementById('status_id').focus();
+		return false;
+	 }
+	
 	if(DueDate==''){
 		
 		document.getElementById('errmsg').innerHTML='Please select the DueDate';
-		document.getElementById('datepickerid_1').focus();
+		document.getElementById('datepicker_id').focus();
 		return false;
 	 }
-	if(ActionStatus==''){
+	if(ActionStatus=='0'){
 		document.getElementById('errmsg').innerHTML='Please select the ActionStatus';
 		document.getElementById('ActionStatus').focus();
 		return false;
 	 }
-	 if(upload_file==''){
+	 /*if(upload_file==''){
 		document.getElementById('errmsg').innerHTML='Please select the upload file';
 		document.getElementById('upload_file').focus();
 		return false;
-	 }
+	 }*/
 	//alert('Welcome5');
 	document.getElementById('hdAction').value=1;
 	//alert(document.getElementById('hdAction').value);
@@ -186,8 +212,8 @@ function cat_valid()
   	  	$.ajax({
   	  		url: 'Getdepartmentuser.php',
   	  		type: "POST",
-  	  		data:"departmentuser="+val,
-  	  		success: function(data) {
+  	  	data:"departmentuser="+val,
+  	 		success: function(data) {
   		  		//alert(data); 
   	  			document.getElementById("teamrow").innerHTML=data;
   	  					
@@ -195,16 +221,16 @@ function cat_valid()
   	  	});
   	  	
   	  }
-	  function getDepartmentUserLoop(cnt,val)
+	  function getDepartmentUserLoop(val)
  	  {
  	  	
  	  	$.ajax({
  	  		url: 'Getdepartmentuserloop.php',
  	  		type: "POST",
- 	  		data:"departmentuse="+val+"&departmentcnt="+cnt,
+ 	  		data:"departmentuse="+val,
  	  		success: function(data) {
  		  		//alert(data); 
- 	  			document.getElementById("teamrowloop"+cnt).innerHTML=data;
+ 	  			document.getElementById("teamrowloop").innerHTML=data;
  	  					
  	  		}
  	  	});
@@ -447,213 +473,47 @@ function cat_valid()
 											</td>
 											<td style="padding-top: 10px; padding-bottom: 10px;">
 												<div id="action1">
-													<textarea rows="2" cols="70" name="ActionItemId_1" id="ActionItemId_1"></textarea>
+													<textarea rows="2" cols="70" name="ActionItemId[]" id="ActionItem_Id"></textarea>
 														<br><br>
-													<textarea rows="2" cols="70" name="DependentTaskId_1" id="DependentTaskId_1"></textarea> 
+													<textarea rows="2" cols="70" name="DependentTaskId[]" id="DependentTask_Id"></textarea> 
 														<br><br> 
-													<select name="DepartmentId_1" id="DepartmentId_1" style="width: 32%;" onChange="getDepartmentUserLoop(1,this.value);">
+													<select name="DepartmentId[]" id="Department_Id" style="width: 32%;" onChange="getDepartmentUserLoop(this.value);">
 													<option value="0">--Select--</option> 
 													{section name=D loop=$dept}
 													<option value="{$dept[D].Id}">{$dept[D].DepartmentName}</option>
 													{/section}
 													</select>
 													<div class="department-user" style="width: 40%; margin-right: 36px; float: right;">
-													<div id="teamrowloop1">
-													<select name="DepatuserId_1" id="DepatuserId_1">
+													<div id="teamrowloop">
+													<select name="DepatuserId[]" id="Depatuser_Id">
 													<option value="0">--Select User--</option> 
 													</select>
 													</div>
 													</div>
-													<select name="statusid_1" id="statusid_1" style="width: 32%; /*! line-height: 20px; */ padding: 2px 0px;">
+													<br></br>
+													<select name="statusid[]" id="status_id" style="width: 32%; /*! line-height: 20px; */ padding: 2px 0px;">
+													<option value="0">--Select Status--</option> 
 													<option>Open</option>
 													<option>Closed</option>
 													<option>Yet to start</option>
 													</select>
-													<span style="margin-left: 26px; width: 63%; margin-top: 0px; display: inline-block;">
+													<br></br>
+													
 													Action Due Date:<span class="mandatory" style="color: red">*</span>
-													<input name="datepickerid_1" id="datepickerid_1" class="dtpicker" value="" size="30" type="text"> 
-													 <a href="javascript: calladd('2');" style="margin-top: 10px; display: inline-block;"> 
-													<img src="img/plus.png" height="17" width="17" onclick="return ActionItem();">
-													</a>
+													<input name="datepickerid[]" id="datepicker_id" class="dtpicker" value="" size="30" type="text"> 
+													<a class="add-box" href="#" onclick="add_text();"><img src="img/plus.png" width="20" height="20" ></img></a>
 													</span>
 												
 												</div>
 												
-												<div id="action2"
-													style="display: none; margin-bottom: 10px; margin-top: 10px;">
-													<textarea rows="2" cols="70" name="ActionItemId_2" id="ActionItemId_2"></textarea>
-													<br><br>
-													 <textarea rows="2" cols="70" name="DependentTaskId_2" id="DependentTaskId_2"></textarea> <br><br>
-													 <select name="DepartmentId_2" id="DepartmentId_2" style="width: 32%;" onChange="getDepartmentUserLoop(2,this.value);">
-													 <option value="0">--Select--</option> 
-													 {section name=D loop=$dept}
-													 <option value="{$dept[D].Id}">{$dept[D].DepartmentName}</option>
-													 {/section}
-													 </select>
-													 <div class="department-user" style="width: 40%; margin-right: 36px; float: right;">
-													 <div id="teamrowloop2">
-													 <select name="DepatuserId_2" id="DepatuserId_2">
-														<option value="0">--Select User--</option> 
-													 </select>
-													 </div>
-													 </div>
-													 <select name="statusid_2"id="statusid_2" style="width: 32%;">
-														<option>Open</option>
-														<option>Closed</option>
-														<option>Yet to start</option>
-													 </select> 
-													 
-													<span style="margin-left: 15px; width: 63%; margin-top: 10px; display: inline-block;">
-													Action Due Date:
-													<input name="datepickerid_2" id="datepickerid_2" class="dtpicker" value="" size="30" type="text">
-													<a href="javascript: calladd('3');">
-													<img src="img/plus.png" height="17" width="17" onclick="return ActionItem();">
-													</a> 
-													<a href="javascript: callclose('2');">
-													<img src="img/cross.png" height="17" width="17" onclick="return ActionItemdelete();">
-													</a>
-													</span> 
-													</span>
-													</div>
-												
-																								
-												<div id="action3" style="display: none; margin-bottom: 10px;">
-													<textarea rows="2" cols="70" name="ActionItemId_3" id="ActionItemId_3"></textarea>
-													<br><br> 
-													<textarea rows="2" cols="70" name="DependentTaskId_3" id="DependentTaskId_3"></textarea> <br><br>
-													<select name="DepartmentId_3" id="DepartmentId_3" style="width: 32%;" onChange="getDepartmentUserLoop(3,this.value);">
-													<option value="0">--Select--</option> 
-													{section name=D loop=$dept}
-													<option value="{$dept[D].Id}">{$dept[D].DepartmentName}</option>
-													{/section}
-													</select>
-													<div class="department-user" style="width: 40%; margin-right: 36px; float: right;">
-													<div id="teamrowloop3">
-														<select name="DepatuserId_3" id="DepatuserId_3">
-															<option value="0">--Select User--</option> 
-														</select>
-													</div>
-													</div>
-													 <select name="statusid_3"id="statusid_3" style="width: 32%;">
-																		<option>Open</option>
-																		<option>Closed</option>
-																		<option>Yet to start</option>
-																</select> 
-																<span
-																	style="margin-left: 15px; width: 63%; margin-top: 10px; display: inline-block;">
-																		
-																		Action Due Date:
-																	<input name="datepickerid_3" id="datepickerid_3" class="dtpicker" value="" size="30" type="text">
-																		 <a href="javascript: calladd('4');">
-																		 <img src="img/plus.png" height="17" width="17" onclick="return ActionItem();">
-																			</a>
-																			<a href="javascript: callclose('3');">
-																			<img src="img/cross.png" height="17" width="17" onclick="return ActionItemdelete();">
-																			</a>
-																</span>
-												
-												</div>
-												
-												
-												
-												<div id="action4"
-													style="display: none; margin-bottom: 10px;">
-													<textarea rows="2" cols="70" name="ActionItemId_4"
-														id="ActionItemId_4"></textarea>
-														
-													<br><br> <textarea rows="2" cols="70" name="DependentTaskId_4" id="DependentTaskId_4"></textarea> <br><br>
-													
-													<select name="DepartmentId_4" id="DepartmentId_4" style="width: 32%;" onChange="getDepartmentUserLoop(4,this.value);">
-																	<option value="0">--Select--</option> {section name=D
-																	loop=$dept}
-																	<option value="{$dept[D].Id}">{$dept[D].DepartmentName}</option>
-																	{/section}
-															</select>
-																<div class="department-user"
-													style="width: 40%; margin-right: 36px; float: right;">
-														<div id="teamrowloop4">
-																<select name="DepatuserId_4" id="DepatuserId_4">
-																		<option value="0">--Select User--</option> 
-																		
-																	</select>
-																</div>
-																</div>
-																 <select name="statusid_4"id="statusid_4" style="width: 32%;">
-																		<option>Open</option>
-																		<option>Closed</option>
-																		<option>Yet to start</option>
-																</select> 
-																
-																
-														<span
-																	style="margin-left: 15px; width: 63%; margin-top: 10px; display: inline-block;">
-																		Action Due Date:<input name="datepickerid_4"
-																		id="datepickerid_4"
-																		class="dtpicker" value="" size="30" type="text">
-																		 <a href="javascript: calladd('5');"><img
-																					src="img/plus.png" height="17" width="17" onclick="return ActionItem();">
-																			
-																			</a> <a href="javascript: callclose('4');">
-																			<img
-																					src="img/cross.png" height="17" width="17" onclick="return ActionItemdelete();">
-																			
-																			</a>
-																
-																</span>
-												
-												</div>
-												<div id="action5"
-													style="display: none; margin-bottom: 10px;">
-													<textarea rows="2" cols="70" name="ActionItemId_5"
-														id="ActionItemId_5"></textarea>
-														
-													<br><br> <textarea rows="2" cols="70" name="DependentTaskId_5" id="DependentTaskId_5"></textarea> <br><br>
-													
-																<select name="DepartmentId_5" id="DepartmentId_5" style="width: 32%;" onChange="getDepartmentUserLoop(5,this.value);">
-																	<option value="0">--Select--</option> {section name=D
-																	loop=$dept}
-																	<option value="{$dept[D].Id}">{$dept[D].DepartmentName}</option>
-																	{/section}
-															</select>
-																<div class="department-user"
-													style="width: 40%; margin-right: 36px; float: right;">
-														<div id="teamrowloop5">
-																<select name="DepatuserId_5" id="DepatuserId_5">
-																		<option value="0">--Select User--</option> 
-																</select>
-																</div>
-																</div>
-																<select name="statusid_5"id="statusid_5" style="width: 32%;">
-																		<option>Open</option>
-																		<option>Closed</option>
-																		<option>Yet to start</option>
-																</select>
-																
-																 <span
-																	style="margin-left: 15px; width: 63%; margin-top: 10px; display: inline-block;">
-																		Action Due Date:
-															<input name="datepickerid_5"
-																		id="datepickerid_5"
-																		class="dtpicker" value="" size="30" type="text">
-																		<!-- <img
-																			src="img/plus.png" alt="" height="17" width=""25" onclick="return ActionItem();"> --> <a
-																				href="javascript: callclose('5');">
-																				<img
-																					src="img/cross.png" height="17" width="17" onclick="return ActionItemdelete();">
-																			
-																			</a>
-																
-																</span>
-												
-												</div>
-											</td>
+											
 										</tr>
 										<tr>
 											<td style="padding: 15px;">Action - Status:<span
 												class="mandatory" style="color: red">*</span></td>
 											<td><select name="ActionStatus" id="ActionStatus"
 												style="width: 210px">
-
+													<option value="0">--Select Action Status--</option> 
 													<option value="Completed">Completed</option>
 													<option value="Postpone">Postpone</option>
 													<option value="On Hold">On Hold</option>

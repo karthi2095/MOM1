@@ -153,11 +153,11 @@ function catvalid()
 		document.getElementById('ActionStatus').focus();
 		return false;
 	 }
-	 if(upload_file==''){
+	/* if(upload_file==''){
 			document.getElementById('errmsg').innerHTML='Please select the upload file';
 			document.getElementById('upload_file').focus();
 			return false;
-		 }
+		 }*/
 	document.getElementById('hdAction').value=1;
 	
 }
@@ -212,10 +212,9 @@ function getDepartmentUserLoop(cnt,val)
 		else
 		{
 			var tot=(parseInt(i) + 1); 
-			
-		}
 		
-	   
+		}
+	 
 	}
 	document.getElementById('Actionitem').value=tot;
 	
@@ -268,12 +267,10 @@ document.getElementById('Actionitem').value=tot;
 		document.getElementById('action'+a).style.display='none';
 	}
 
-	 	
-
-  
+	 
        jQuery(function($){
-           $( "#datepicker" ).datepicker();
-           $(".dtpicker").datepicker();
+           $( "#datepicker" ).datepicker({minDate: 0});
+           $(".dtpicker").datepicker({minDate: 0});
 		});
        function changedept(dept) {       	
            $.ajax({

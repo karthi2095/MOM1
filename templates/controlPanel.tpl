@@ -10,6 +10,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link rel="stylesheet" href="css/all.css">
 	<link rel="stylesheet" href="css/controlpanel.css">
+	{literal}
   <script src="js/jquery-1.12.4.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/canvasjs.min.js"></script>
@@ -17,36 +18,52 @@
 	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
-  {literal}
+  
 <script>
 function displaypanel(val)
 {
 	var num = val;
-	//alert(num);
+	
 	if(num == 2)
 	{
-		document.getElementById("meeting-wise").style.display="none";
+		//document.getElementById("meeting-wise").style.visibility="hidden";
 		$("#meeting").removeClass("active");
-	    document.getElementById("day-wise").style.display="block";
+		$("#meeting-wise").addClass("chart");
+
+		$("#day-wise").removeClass("chart");
+	    document.getElementById("day-wise").style.visibility="visible";
 		$("#day").addClass("active");
-	    document.getElementById("dept-wise").style.display="none";
+		
+	    //document.getElementById("dept-wise").style.visibility="hidden";
 		$("#dept").removeClass("active");
+		$("#dept-wise").addClass("chart");
+		
 	
 	}else if(num == 3){
-		document.getElementById("meeting-wise").style.display="none";
+		//document.getElementById("meeting-wise").style.visibility="hidden";
 		$("#meeting").removeClass("active");
-	    document.getElementById("day-wise").style.display="none";
+		$("#meeting-wise").addClass("chart");
+		
+	   // document.getElementById("day-wise").style.visibility="hidden";
 		$("#day").removeClass("active");
-	    document.getElementById("dept-wise").style.display="block";
+		$("#day-wise").addClass("chart");
+		
+		$("#dept-wise").removeClass("chart");
+	    document.getElementById("dept-wise").style.visibility="visible";
 		$("#dept").addClass("active");
 	}else{
-		
-		document.getElementById("meeting-wise").style.display="block";
+		$("#meeting-wise").removeClass("chart");
+		document.getElementById("meeting-wise").style.visibility="visible";
 		$("#meeting").addClass("active");
-		document.getElementById("day-wise").style.display="none";
+		
+		//document.getElementById("day-wise").style.visibility="hidden";
 		$("#day").removeClass("active");
-		document.getElementById("dept-wise").style.display="none";
+		$("#day-wise").addClass("chart");
+		
+		//document.getElementById("dept-wise").style.visibility="hidden";
 		$("#dept").removeClass("active");
+		$("#dept-wise").addClass("chart");
+		
 	}
 }
 $( document ).ready(function() {
@@ -56,35 +73,45 @@ $( document ).ready(function() {
 	var value=qryArr[1];
 	
 	//alert(value);
-     if(value == 2)
-    {
-    	document.getElementById("meeting-wise").style.display="block";
-		$("#meeting").addClass("active");
-		document.getElementById("day-wise").style.display="none";
-		$("#day").removeClass("active");
-		document.getElementById("dept-wise").style.display="none";
-		$("#dept").removeClass("active");
-     }
+    
     if(value == 3)
     { 
-    	document.getElementById("meeting-wise").style.display="none";
+    	//document.getElementById("meeting-wise").style.visibility="hidden";
 		$("#meeting").removeClass("active");
-	    document.getElementById("day-wise").style.display="block";
+
+		$("#day-wise").removeClass("chart");
+	    document.getElementById("day-wise").style.visibility="visible";
 		$("#day").addClass("active");
-	    document.getElementById("dept-wise").style.display="none";
+		
+	    //document.getElementById("dept-wise").style.visibility="hidden";
 		$("#dept").removeClass("active");
      }
-    if(value == 4)
+    else if(value == 4)
     { 
-    	document.getElementById("meeting-wise").style.display="none";
+    	//document.getElementById("meeting-wise").style.visibility="hidden";
 		$("#meeting").removeClass("active");
-	    document.getElementById("day-wise").style.display="none";
+		
+	   // document.getElementById("day-wise").style.visibility="hidden";
 		$("#day").removeClass("active");
-	    document.getElementById("dept-wise").style.display="block";
+		
+		$("#dept-wise").removeClass("chart");
+	    document.getElementById("dept-wise").style.visibility="visible";
 		$("#dept").addClass("active");
     } 
+    else
+    {
+    	$("#meeting-wise").removeClass("chart");
+		document.getElementById("meeting-wise").style.visibility="visible";
+		$("#meeting").addClass("active");
+		//document.getElementById("day-wise").style.visibility="hidden";
+		$("#day").removeClass("active");
+		
+		//document.getElementById("dept-wise").style.visibility="hidden";
+		$("#dept").removeClass("active");
+     }
 });
 </script>
+
  {/literal}
 </head>
 <!--Design Prepared by Rajasri Systems-->   
@@ -93,7 +120,7 @@ $( document ).ready(function() {
 	<div id="middle"> 
 	  <div id="center-column">
 		<div class="top-bar-header">
-		  <h1>Control Panel</h1>
+		  <h1>Homepage</h1>
 		  <div class="breadcrumbs">Homepage</div>
 		</div>
 		<br/>
@@ -163,7 +190,7 @@ $( document ).ready(function() {
 		
 		<!-- for meeting Panel Left-->
 		
-		<div id="meeting-wise" style="display: block;">
+		<div id="meeting-wise" class="chart">
 			<div class="panel-left" style="width:100%">
 				<div class="breakdown-div" style="width:20%;float: left;height:360px;">
 					<p class="title">Task Total</p>
@@ -257,7 +284,7 @@ $( document ).ready(function() {
 		
 		<!-- Panel for Day Wise  ----->
 		
-		<div id="day-wise" style="display: none;">
+		<div id="day-wise" class="chart">
 			<div class="panel-left" style="width:100%">
 				<div class="breakdown-div" style="width:20%;float: left;height:360px;">
 					<p class="title">Task Total</p>
@@ -351,7 +378,7 @@ $( document ).ready(function() {
 		
 		<!---   Panel for Department Wise  ---->
 		
-		<div id="dept-wise" style="display: none;" >
+		<div id="dept-wise" class="chart">
 			<div class="panel-left" style="width:100%">
 				<div class="breakdown-div" style="width:20%;float: left;height:360px;">
 					<!--<p class="title">Critical Action Status (Department)</p>-->
@@ -814,7 +841,7 @@ window.onload = function() {
 		
 		/* -------------for Day wise column chart------------ */
 		
-		var data = new google.visualization.arrayToDataTable([
+		var data1 = new google.visualization.arrayToDataTable([
 		  ['Department', 'Closed', 'Open'],
 		  ['Production', 5, 8],
 		  ['Sales', 4, 5],
@@ -823,7 +850,7 @@ window.onload = function() {
 		  ['Admin', 4, 7]
 		]);
 
-		var options = {
+		var options1 = {
 		 width: 435,
 		 height: 250,
 		  chart: {
@@ -835,7 +862,7 @@ window.onload = function() {
 		};
 
 		var chart = new google.charts.Bar(document.getElementById('newdiv1'));		
-		chart.draw(data, options);
+		chart.draw(data1, options1);
 		google.visualization.events.addListener(chart, 'select', function() {
 			var selection = chart.getSelection();
 			var mapvar = JSON.stringify(selection);
@@ -853,7 +880,7 @@ window.onload = function() {
 		
 		/*----------- for Department wise column chart----------------*/
 		
-		var data = new google.visualization.arrayToDataTable([
+		var data2 = new google.visualization.arrayToDataTable([
 		  ['Department', 'Closed', 'Open'],
 		  ['Production', 5, 8],
 		  ['Sales', 4, 5],
@@ -862,7 +889,7 @@ window.onload = function() {
 		  ['Admin', 4, 7]
 		]);
 
-		var options = {
+		var options2 = {
 		 width: 435,
 		 height: 250,
 		  chart: {
@@ -874,7 +901,7 @@ window.onload = function() {
 		};
 
 		var chart = new google.charts.Bar(document.getElementById('newdiv2'));		
-		chart.draw(data, options);
+		chart.draw(data2, options2);
 		google.visualization.events.addListener(chart, 'select', function() {
 			var selection = chart.getSelection();
 			var mapvar = JSON.stringify(selection);
